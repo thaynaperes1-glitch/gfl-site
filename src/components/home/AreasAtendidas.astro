@@ -1,0 +1,122 @@
+---
+import { empresa } from '../../lib/empresa';
+
+const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
+---
+
+<section data-reveal class="bg-gfl-bg-soft py-16 md:py-24 relative overflow-hidden">
+  <div
+    class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gfl-midea/5 to-transparent pointer-events-none"
+  >
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+      <div
+        class="inline-flex items-center gap-2 text-xs text-gfl-midea font-bold tracking-widest mb-4 uppercase"
+      >
+        <span class="w-8 h-px bg-gfl-midea"></span>
+        Áreas Atendidas
+        <span class="w-8 h-px bg-gfl-midea"></span>
+      </div>
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gfl-text tracking-tight mb-5 leading-[1.05]"
+      >
+        +30 cidades em<br />
+        <span class="text-gfl-midea">duas regiões estratégicas</span>
+      </h2>
+      <p class="text-gfl-text-muted text-base md:text-lg max-w-2xl mx-auto">
+        Atendimento técnico autorizado Midea + Carrier em todo o Vale do Paraíba e Região de
+        Campinas. Sede própria em São José dos Campos, equipe técnica própria.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+      {
+        empresa.regioes.map((regiao, idx) => (
+          <div
+            data-reveal
+            data-delay={String(idx * 150)}
+            class="group relative bg-white rounded-2xl border border-gfl-border-soft p-6 md:p-8 hover:border-gfl-midea hover:shadow-2xl transition-all duration-500"
+          >
+            <div class="absolute -top-3 left-6 inline-flex items-center gap-2 px-3 py-1 bg-gfl-midea text-white text-[10px] font-bold tracking-wider uppercase rounded-full shadow-lg">
+              <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+              Região {idx + 1}
+            </div>
+
+            <div class="flex items-start justify-between mb-6 pb-5 border-b border-gfl-border-soft mt-2">
+              <div class="flex items-center gap-3">
+                <div class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center group-hover:bg-gfl-midea transition-colors duration-300">
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-gfl-midea group-hover:text-white transition-colors duration-300"
+                  >
+                    <path d="M20 10c0 7-8 13-8 13s-8-6-8-13a8 8 0 0 1 16 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-2xl md:text-3xl font-bold text-gfl-text tracking-tight leading-tight">
+                    {regiao.nome}
+                  </h3>
+                  <div class="text-sm text-gfl-text-muted mt-0.5">
+                    {regiao.cidades.length} cidades atendidas
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-4xl md:text-5xl font-bold text-gfl-midea leading-none">
+                  {regiao.cidades.length}
+                </div>
+                <div class="text-[10px] text-gfl-text-muted uppercase tracking-wider mt-1">
+                  cidades
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-2.5">
+              {regiao.cidades.map((cidade) => (
+                <div class="flex items-center gap-2.5 text-sm text-gfl-text group/item">
+                  <div class="w-1.5 h-1.5 bg-gfl-midea rounded-full shrink-0 group-hover/item:scale-150 transition-transform" />
+                  <span class="truncate">{cidade}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 md:mt-16 text-center">
+      <p class="text-sm text-gfl-text-muted mb-4">
+        Sua cidade não está na lista? Atendemos também áreas vizinhas mediante consulta.
+      </p>
+      <a
+        href="/contato"
+        class="inline-flex items-center gap-2 text-gfl-midea hover:text-gfl-midea-hover font-semibold text-sm transition-colors"
+      >
+        Consultar atendimento para minha região
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

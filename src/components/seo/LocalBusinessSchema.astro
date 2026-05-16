@@ -1,0 +1,50 @@
+---
+import { empresa } from '../../lib/empresa';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'HVACBusiness'],
+  '@id': 'https://gflservice.com.br/#organization',
+  name: empresa.nome,
+  legalName: empresa.razaoSocial,
+  url: 'https://gflservice.com.br',
+  telephone: empresa.contato.telefoneRaw,
+  email: empresa.contato.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: `${empresa.endereco.rua}, ${empresa.endereco.numero}`,
+    addressLocality: empresa.endereco.cidade,
+    addressRegion: empresa.endereco.uf,
+    postalCode: empresa.endereco.cep,
+    addressCountry: 'BR'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: empresa.geo.latitude,
+    longitude: empresa.geo.longitude
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00'
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '08:00',
+      closes: '12:00'
+    }
+  ],
+  areaServed: empresa.areas.map((c) => ({ '@type': 'City', name: c })),
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: empresa.google.rating,
+    reviewCount: empresa.google.reviewCount
+  },
+  sameAs: [empresa.social.instagram, empresa.social.facebook]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

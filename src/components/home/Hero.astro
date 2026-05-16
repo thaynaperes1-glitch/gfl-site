@@ -1,0 +1,93 @@
+---
+import { whatsappLink } from '../../lib/empresa';
+---
+
+<section class="bg-gfl-bg-soft relative overflow-hidden">
+  <div class="container mx-auto px-4 py-12 md:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-7 order-1">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 bg-gfl-midea rounded text-xs font-semibold tracking-wider mb-6 uppercase"
+          style="color: white;"
+        >
+          <span class="text-base font-bold">)</span> Centro de Serviços Autorizado
+        </div>
+
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 text-gfl-text"
+        >
+          PMOC e manutenção HVAC<br />
+          <span class="text-gfl-midea">no Vale e Campinas</span>
+        </h1>
+
+        <p class="text-base md:text-lg text-gfl-text-muted leading-relaxed mb-8 max-w-xl">
+          Autorizada oficial <strong class="text-gfl-carrier">Midea Blue Service</strong> e
+          <strong class="text-gfl-carrier">Carrier</strong>. Plano de Manutenção, Operação e
+          Controle conforme Lei 13.589/2018. Atendemos mais de 30 cidades no Vale do Paraíba e
+          Região de Campinas.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-8">
+          <a
+            href="/pmoc"
+            class="bg-gfl-midea hover:bg-gfl-midea-hover px-7 py-3.5 rounded font-semibold text-sm md:text-base transition-colors"
+            style="color: white;"
+          >
+            Solicite diagnóstico PMOC
+          </a>
+          <a
+            href={whatsappLink('Olá, vim do site e quero falar com um técnico.')}
+            target="_blank"
+            rel="noopener"
+            class="bg-white text-gfl-carrier border border-gfl-carrier hover:bg-gfl-carrier hover:text-white px-7 py-3.5 rounded font-semibold text-sm md:text-base transition-colors"
+          >
+            Falar pelo WhatsApp
+          </a>
+        </div>
+
+        <div class="flex items-center gap-3 pt-5 border-t border-gfl-border-soft">
+          <div class="flex items-center gap-1 text-gfl-warning">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              ></path>
+            </svg>
+            <span class="font-bold text-sm text-gfl-text ml-1">4,7</span>
+          </div>
+          <span class="text-sm text-gfl-text-muted">189 avaliações no Google</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 order-2 relative">
+        <div
+          class="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gfl-border-soft group"
+        >
+          <img
+            src="/images/fachada/fachada-hero.jpg"
+            alt="Fachada GFL Centro de Serviços Autorizado Midea Carrier"
+            class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"
+          >
+          </div>
+          <div class="absolute top-4 left-4 flex flex-col gap-2">
+            <div
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/95 backdrop-blur rounded text-[10px] font-bold text-gfl-carrier tracking-wider uppercase shadow-sm"
+            >
+              <span class="w-1.5 h-1.5 bg-gfl-success rounded-full animate-pulse"></span>
+              Sede Própria · Autorizada Oficial
+            </div>
+          </div>
+        </div>
+        <div
+          class="hidden md:block absolute -bottom-4 -right-4 bg-gfl-midea text-white px-4 py-3 rounded-lg shadow-xl"
+          style="z-index: 2;"
+        >
+          <div class="text-xs font-semibold tracking-wide uppercase opacity-80">Nossa sede</div>
+          <div class="text-sm font-bold">SJC · Vale do Paraíba</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

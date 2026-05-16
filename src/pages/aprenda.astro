@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa, whatsappLink } from '../lib/empresa';
+
+const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
+
+const topicos = {
+  residencial: [
+    {
+      titulo: 'Como dimensionar BTUs para casa?',
+      categoria: 'Residencial',
+      conteudo: 'A regra geral é 600 BTUs por metro quadrado, mas isso muda conforme o ambiente. Quarto pequeno (até 12m²) com 1 pessoa: 7.500 a 9.000 BTUs basta. Sala de estar com janelas voltadas pro sol da tarde, eletrônicos ligados e 3-4 pessoas: pode exigir 12.000 a 18.000 BTUs. Fatores que aumentam a necessidade: insolação direta, pé-direito alto, ambientes integrados (cozinha+sala), número de pessoas, eletrônicos. Subdimensionar gera consumo excessivo e desgaste do equipamento; superdimensionar gera desconforto (ar gela e desliga sem retirar umidade). Antes de comprar, faça o cálculo correto considerando todos os fatores.',
+      cta: 'Consultar dimensionamento',
+      ctaMsg: 'Olá, vim do site GFL pelo conteúdo educacional. Quero ajuda pra dimensionar o ar-condicionado correto pra minha casa.'
+    },
+    {
+      titulo: 'Como saber se preciso de manutenção preventiva?',
+      categoria: 'Residencial',
+      conteudo: 'A Anvisa recomenda manutenção preventiva a cada 6 meses pra uso residencial e a cada 3 meses pra uso intenso. Sinais de que está na hora: cheiro ruim ao ligar, ar gelando menos que antes, conta de luz subindo sem motivo aparente, gotejamento de água pela unidade interna, ruídos estranhos. Manutenção preventiva inclui limpeza completa de filtros, evaporadora, condensadora, verificação de pressão do gás, checagem elétrica e teste de capacidade térmica. Custa muito menos que um conserto e estende a vida do equipamento em até 50%. Sem manutenção, o split perde eficiência progressivamente — gasta mais energia pra gelar menos.',
+      cta: 'Agendar manutenção',
+      ctaMsg: 'Olá, vim do site GFL e quero agendar manutenção preventiva no meu ar-condicionado.'
+    },
+    {
+      titulo: 'Por que higienização do ar é importante?',
+      categoria: 'Residencial',
+      conteudo: 'O ar-condicionado puxa o ar do ambiente e o devolve resfriado — mas no caminho ele passa pelos filtros, serpentinas e bandeja de condensação. Sem higienização periódica, esses componentes acumulam poeira, mofo, ácaros, fungos e bactérias. O equipamento então passa a distribuir esses agentes pelo ambiente, podendo causar alergias, rinite, sinusite, asma e síndromes respiratórias. Higienização técnica (não confundir com limpeza dos filtros que você mesmo faz em casa) usa produtos bactericidas específicos e remove biofilme das serpentinas. Recomendado: 1x ao ano em uso residencial leve, a cada 6 meses em residências com crianças, idosos ou pessoas alérgicas. Bônus: ar limpo gela mais e gasta menos energia.',
+      cta: 'Solicitar higienização',
+      ctaMsg: 'Olá, vim do site GFL e quero agendar uma higienização do meu ar-condicionado.'
+    },
+    {
+      titulo: 'Sinais de que seu split precisa de assistência',
+      categoria: 'Residencial',
+      conteudo: 'Sinais críticos que indicam necessidade de visita técnica imediata: 1) Ar parou de gelar ou gela muito pouco — pode ser gás baixo, compressor com defeito ou serpentina suja. 2) Goteira na unidade interna — bandeja entupida, drenagem incorreta ou nível desregulado. 3) Ruído anormal (chiado, estalo, batida) — pode ser ventilador, compressor ou peça solta. 4) Cheiro queimado — risco elétrico, desliga imediatamente da tomada. 5) Display piscando código de erro — cada fabricante tem códigos próprios, técnico autorizado interpreta. 6) Disjuntor desarmando ao ligar — sobrecarga elétrica ou curto. 7) Ar saindo da unidade externa mas não gelando — pressão de gás. Nunca tente consertar por conta própria — risco de choque, vazamento de gás refrigerante (tóxico) e perda da garantia de fábrica.',
+      cta: 'Solicitar diagnóstico',
+      ctaMsg: 'Olá, vim do site GFL. Meu ar-condicionado está com problema e quero um diagnóstico.'
+    }
+  ],
+  empresarial: [
+    {
+      titulo: 'O que é PMOC e quem é obrigado por lei?',
+      categoria: 'Empresarial',
+      conteudo: 'PMOC = Plano de Manutenção, Operação e Controle. É obrigatório pela Lei Federal 13.589/2018 (regulamentada pela Anvisa) para todos os ambientes climatizados de uso público ou coletivo com capacidade igual ou superior a 60.000 BTUs (5 TR). Quem é obrigado: hospitais e clínicas, escolas, hotéis, shoppings, restaurantes, escritórios com atendimento ao público, indústrias com ambientes climatizados coletivos, condomínios comerciais. O PMOC deve conter: laudo técnico inicial, cronograma de manutenções, identificação de cada equipamento, qualificação do Responsável Técnico registrado, registros de execução. Multas pelo descumprimento podem chegar a R$ 1.500.000. Além do risco legal, ambientes sem PMOC têm maior incidência de síndromes respiratórias entre funcionários e clientes.',
+      cta: 'Cotar PMOC pra minha empresa',
+      ctaMsg: 'Olá, vim do site GFL pelo conteúdo sobre PMOC. Quero cotar um plano pra minha empresa.'
+    },
+    {
+      titulo: 'Manutenção corretiva, preventiva e preditiva — qual a diferença?',
+      categoria: 'Empresarial',
+      conteudo: 'Três tipos com finalidades diferentes: CORRETIVA é o conserto após o defeito aparecer. Indispensável mas reativa — equipamento já parou, produção/conforto comprometido. PREVENTIVA é o cronograma de revisões fixas (mensal, trimestral, semestral) independente de haver problema. Reduz drasticamente a chance de falha, mas tem custo fixo programado. PREDITIVA é o monitoramento técnico contínuo (termografia, análise de vibração, medição de eficiência) que prevê quando um componente vai falhar antes de falhar. Mais cara, mas a única que evita parada não programada em ambientes críticos. Para B2B sério, a combinação ideal é: PREVENTIVA como base + PREDITIVA em equipamentos críticos (data centers, salas cirúrgicas, indústrias com processo contínuo) + CORRETIVA com SLA garantido pro inesperado.',
+      cta: 'Montar plano personalizado',
+      ctaMsg: 'Olá, vim do site GFL. Quero falar sobre um plano de manutenção pra minha empresa.'
+    },
+    {
+      titulo: 'Como dimensionar BTUs para ambiente comercial?',
+      categoria: 'Empresarial',
+      conteudo: 'Dimensionamento comercial é muito mais complexo que residencial. A regra de 600 BTU/m² é só o ponto de partida — precisa considerar: ocupação (cada pessoa gera ~500 BTUs/h em atividade leve, 700 em atividade moderada); carga térmica de equipamentos (PC = 400 BTUs, impressora = 1.500 BTUs, servidor pequeno = 5.000 BTUs); iluminação (10 BTUs por W instalado); insolação (paredes oeste/norte adicionam até 30%); pé-direito (acima de 3m muda o cálculo); ventilação externa exigida pela NBR 16401. Erros comuns em comércio: subdimensionar achando que economiza (resulta em equipamento trabalhando 100% do tempo, vida útil reduzida em 60% e conta de luz alta) ou superdimensionar (custo inicial alto e desconforto). O cálculo correto é feito por engenheiro mecânico com NBR 16401 — não é "chute por experiência".',
+      cta: 'Solicitar projeto técnico',
+      ctaMsg: 'Olá, vim do site GFL. Quero um projeto técnico de climatização para minha empresa.'
+    },
+    {
+      titulo: 'Cuidados com VRF e sistemas centrais',
+      categoria: 'Empresarial',
+      conteudo: 'Sistemas VRF (Variable Refrigerant Flow) e centrais (chillers, fan-coils, dutos) são equipamentos de alto investimento — entre R$ 80.000 e R$ 500.000 para empresas médias. Erros que destroem esses sistemas: 1) Manutenção por técnicos não autorizados — perde garantia e pode causar contaminação cruzada do gás refrigerante. 2) Atraso na limpeza das condensadoras externas — acumula sujeira, pressão sobe, compressor queima (peça custa de R$ 15.000 a R$ 60.000). 3) Operação fora dos parâmetros do projeto — sistema dimensionado pra 20°C operando a 18°C trabalha em sobrecarga constante. 4) Não monitorar pressões e temperaturas mensalmente — sintomas precoces de falha passam despercebidos até virar pane. 5) Não ter Responsável Técnico registrado — ilegal e perigoso. Manutenção autorizada Carrier ou Midea é exigência das próprias marcas pra preservar garantia estendida.',
+      cta: 'Falar sobre VRF/Central',
+      ctaMsg: 'Olá, vim do site GFL. Tenho sistema VRF/central na empresa e preciso de orientação técnica.'
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Aprenda sobre HVAC — Conteúdo técnico da GFL Service & Repair"
+  description="Conteúdo educacional sobre ar-condicionado, manutenção, PMOC e instalação. Aprenda com a equipe técnica de uma Autorizada oficial Midea Blue Service e Carrier no Vale do Paraíba e Região de Campinas."
+>
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"></div>
+      <div class="absolute top-10 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-10 w-72 h-72 bg-gfl-midea/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase" style="color: white;">
+          <span class="w-1.5 h-1.5 bg-gfl-success rounded-full animate-pulse"></span>
+          Conteúdo educacional · 8 tópicos
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] mb-6" style="color: white;">
+          Aprenda sobre<br />
+          <span style="color: #0099DA;">HVAC e ar-condicionado.</span>
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl" style="color: rgba(255,255,255,0.85);">
+          Conteúdo técnico produzido pela equipe da GFL, autorizada oficial Midea Blue Service e Carrier. Sem jargão, sem enrolação — só informação útil pra você decidir melhor.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-12 md:py-16 bg-white border-b border-gfl-border-soft">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-gfl-midea tracking-tight">8</div>
+          <div class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold">Tópicos completos</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-gfl-midea tracking-tight">2</div>
+          <div class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold">Categorias</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-gfl-midea tracking-tight">Free</div>
+          <div class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold">Conteúdo grátis</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-10 md:mb-14 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center shrink-0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea">
+              <path d="M3 9 12 2l9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs text-gfl-midea font-bold tracking-widest uppercase mb-1">Categoria 1</div>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gfl-text">Pra dono de equipamento residencial</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {topicos.residencial.map((topico, idx) => (
+            <article data-reveal data-delay={String((idx % 4) * 100)} class="group relative bg-white rounded-2xl p-6 md:p-8 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gfl-midea/10 text-gfl-midea text-[10px] font-bold tracking-wider uppercase rounded-full mb-4">
+                {topico.categoria}
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold text-gfl-text tracking-tight leading-tight mb-4">{topico.titulo}</h3>
+              <p class="text-sm text-gfl-text-muted leading-relaxed mb-5">{topico.conteudo}</p>
+              <a href={whatsappLink(topico.ctaMsg)} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-midea hover:gap-2.5 transition-all">
+                {topico.cta}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg-soft">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-10 md:mb-14 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center shrink-0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea">
+              <path d="M3 21h18"></path>
+              <path d="M5 21V7l8-4v18"></path>
+              <path d="M19 21V11l-6-4"></path>
+              <path d="M9 9v.01"></path>
+              <path d="M9 12v.01"></path>
+              <path d="M9 15v.01"></path>
+              <path d="M9 18v.01"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs text-gfl-midea font-bold tracking-widest uppercase mb-1">Categoria 2</div>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gfl-text">Pra gestor / empresário</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {topicos.empresarial.map((topico, idx) => (
+            <article data-reveal data-delay={String((idx % 4) * 100)} class="group relative bg-white rounded-2xl p-6 md:p-8 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gfl-carrier/10 text-gfl-carrier text-[10px] font-bold tracking-wider uppercase rounded-full mb-4">
+                {topico.categoria}
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold text-gfl-text tracking-tight leading-tight mb-4">{topico.titulo}</h3>
+              <p class="text-sm text-gfl-text-muted leading-relaxed mb-5">{topico.conteudo}</p>
+              <a href={whatsappLink(topico.ctaMsg)} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-midea hover:gap-2.5 transition-all">
+                {topico.cta}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-carrier relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/20 to-transparent"></div>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-gfl-midea/30 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 max-w-3xl mx-auto" style="color: white;">
+        Não achou a dúvida<br />
+        <span style="color: #0099DA;">que você tinha?</span>
+      </h2>
+      <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: rgba(255,255,255,0.85);">
+        Nossa equipe técnica responde dúvidas específicas pelo WhatsApp. Atendendo {totalCidades}+ cidades no Vale do Paraíba e Região de Campinas.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href={whatsappLink('Olá, vim do site GFL pela página Aprenda. Tenho uma dúvida técnica.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+          Tirar dúvida no WhatsApp
+        </a>
+        <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
+          Outras formas de contato
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

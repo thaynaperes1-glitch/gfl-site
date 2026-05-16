@@ -1,0 +1,508 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa, whatsappLink } from '../lib/empresa';
+---
+
+<BaseLayout
+  title="Contato — GFL Service & Repair"
+  description="Fale com nossa equipe técnica. Atendimento Seg-Sex 08h-17h, Sáb 08h-12h. WhatsApp, telefone, e-mail e sede da GFL em São José dos Campos."
+>
+  <section class="relative py-20 md:py-32 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div
+        class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"
+      >
+      </div>
+      <div class="absolute top-20 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-72 h-72 bg-gfl-midea/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase"
+          style="color: white;"
+        >
+          <span class="w-1.5 h-1.5 bg-gfl-success rounded-full animate-pulse"></span>
+          Atendimento técnico
+        </div>
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] mb-6"
+          style="color: white;"
+        >
+          Fale com nossa<br />
+          <span style="color: #0099DA;">equipe técnica</span>
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl" style="color: rgba(255,255,255,0.85);">
+          Diagnóstico em até 24h. Atendimento de Seg-Sex 08h-17h e Sáb 08h-12h em todo o Vale do
+          Paraíba e Região de Campinas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-20 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <a
+          href={whatsappLink('Olá, vim do site da GFL e gostaria de falar com um técnico.')}
+          target="_blank"
+          rel="noopener"
+          data-reveal
+          data-delay="100"
+          class="group relative bg-white rounded-2xl p-8 border border-gfl-border-soft hover:border-[#25D366] hover:shadow-2xl transition-all duration-500 overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-[#25D366]/0 to-[#25D366]/0 group-hover:from-[#25D366]/5 group-hover:to-[#25D366]/15 transition-all duration-500"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="w-14 h-14 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-5 group-hover:bg-[#25D366] group-hover:scale-110 transition-all duration-300"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="text-[#25D366] group-hover:text-white transition-colors duration-300"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"
+                ></path>
+              </svg>
+            </div>
+            <div class="text-xs font-bold text-[#25D366] tracking-widest uppercase mb-2">
+              Resposta rápida
+            </div>
+            <h3 class="text-xl font-bold text-gfl-text mb-2">WhatsApp</h3>
+            <div class="text-gfl-text-muted font-semibold mb-5">{empresa.contato.whatsapp}</div>
+            <div
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#25D366] group-hover:gap-3 transition-all duration-300"
+            >
+              Iniciar conversa
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href={`tel:${empresa.contato.telefoneRaw}`}
+          data-reveal
+          data-delay="200"
+          class="group relative bg-white rounded-2xl p-8 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500 overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-gfl-midea/0 to-gfl-midea/0 group-hover:from-gfl-midea/5 group-hover:to-gfl-midea/15 transition-all duration-500"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea group-hover:text-white transition-colors duration-300"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                ></path>
+              </svg>
+            </div>
+            <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">
+              Linha fixa
+            </div>
+            <h3 class="text-xl font-bold text-gfl-text mb-2">Telefone</h3>
+            <div class="text-gfl-text-muted font-semibold mb-5">{empresa.contato.telefone}</div>
+            <div
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-midea group-hover:gap-3 transition-all duration-300"
+            >
+              Ligar agora
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href={`mailto:${empresa.contato.email}`}
+          data-reveal
+          data-delay="300"
+          class="group relative bg-white rounded-2xl p-8 border border-gfl-border-soft hover:border-gfl-carrier hover:shadow-2xl transition-all duration-500 overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-gfl-carrier/0 to-gfl-carrier/0 group-hover:from-gfl-carrier/5 group-hover:to-gfl-carrier/15 transition-all duration-500"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="w-14 h-14 rounded-xl bg-gfl-carrier/10 flex items-center justify-center mb-5 group-hover:bg-gfl-carrier group-hover:scale-110 transition-all duration-300"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-carrier group-hover:text-white transition-colors duration-300"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-10 5L2 7"></path>
+              </svg>
+            </div>
+            <div class="text-xs font-bold text-gfl-carrier tracking-widest uppercase mb-2">
+              SAC oficial
+            </div>
+            <h3 class="text-xl font-bold text-gfl-text mb-2">E-mail</h3>
+            <div class="text-gfl-text-muted font-semibold mb-5 break-all">
+              {empresa.contato.email}
+            </div>
+            <div
+              class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-carrier group-hover:gap-3 transition-all duration-300"
+            >
+              Enviar mensagem
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-bg-soft">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+        <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">
+          Nossa sede
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gfl-text tracking-tight leading-[1.05]"
+        >
+          Visite nossa<br />
+          <span class="text-gfl-midea">base técnica</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center shrink-0">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-gfl-midea"
+                >
+                  <path d="M20 10c0 7-8 13-8 13s-8-6-8-13a8 8 0 0 1 16 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-1.5">
+                  Endereço
+                </div>
+                <div class="text-gfl-text font-semibold leading-relaxed">
+                  {empresa.endereco.rua}, {empresa.endereco.numero}
+                </div>
+                <div class="text-sm text-gfl-text-muted leading-relaxed">
+                  {empresa.endereco.bairro}<br />
+                  {empresa.endereco.cidade} / {empresa.endereco.uf} · CEP {empresa.endereco.cep}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center shrink-0">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-gfl-midea"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-1.5">
+                  Horário
+                </div>
+                <div class="text-gfl-text font-semibold mb-1">Segunda a Sexta</div>
+                <div class="text-sm text-gfl-text-muted mb-2">{empresa.horario.seg_sex}</div>
+                <div class="text-gfl-text font-semibold mb-1">Sábado</div>
+                <div class="text-sm text-gfl-text-muted">{empresa.horario.sab}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center shrink-0">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-gfl-midea"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">
+                  Certificações
+                </div>
+                <ul class="space-y-1.5">
+                  {empresa.certificacoes.map((cert) => (
+                    <li class="flex items-start gap-2 text-sm text-gfl-text-muted">
+                      <span class="w-1.5 h-1.5 bg-gfl-success rounded-full shrink-0 mt-1.5"></span>
+                      <span>{cert}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 relative">
+          <div class="absolute -inset-2 bg-gfl-midea/20 rounded-2xl blur-2xl"></div>
+          <div
+            class="relative aspect-[4/3] lg:aspect-[5/6] rounded-2xl overflow-hidden border border-gfl-border-soft shadow-2xl bg-white"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.6616452558264!2d-45.91516828873293!3d-23.255396550336005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc3508e8b0270b%3A0xc6810b22b61d81a5!2sGFL%20Service%20%26%20Repair!5e0!3m2!1spt-BR!2sbr!4v1778950185677!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização da GFL Service & Repair"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10 md:mb-12">
+          <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">
+            Solicite atendimento
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-bold text-gfl-text tracking-tight leading-[1.05] mb-4"
+          >
+            Conte pra gente<br />
+            <span class="text-gfl-midea">o que você precisa</span>
+          </h2>
+          <p class="text-gfl-text-muted text-base md:text-lg max-w-xl mx-auto">
+            Preencha o formulário e enviaremos sua solicitação direto para o WhatsApp da nossa
+            equipe técnica.
+          </p>
+        </div>
+
+        <form
+          id="contato-form"
+          class="bg-white rounded-2xl p-6 md:p-10 border border-gfl-border-soft shadow-lg space-y-5"
+        >
+          <div>
+            <label for="nome" class="block text-sm font-semibold text-gfl-text mb-2">
+              Nome completo
+            </label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              placeholder="Seu nome"
+              class="w-full px-4 py-3 rounded-xl border border-gfl-border-soft bg-white focus:border-gfl-midea focus:ring-2 focus:ring-gfl-midea/20 outline-none transition-all text-gfl-text"
+            />
+          </div>
+
+          <div>
+            <label for="telefone" class="block text-sm font-semibold text-gfl-text mb-2">
+              Telefone / WhatsApp
+            </label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              required
+              placeholder="(12) 99999-9999"
+              class="w-full px-4 py-3 rounded-xl border border-gfl-border-soft bg-white focus:border-gfl-midea focus:ring-2 focus:ring-gfl-midea/20 outline-none transition-all text-gfl-text"
+            />
+          </div>
+
+          <div>
+            <label for="assunto" class="block text-sm font-semibold text-gfl-text mb-2">
+              Assunto
+            </label>
+            <select
+              id="assunto"
+              name="assunto"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-gfl-border-soft bg-white focus:border-gfl-midea focus:ring-2 focus:ring-gfl-midea/20 outline-none transition-all text-gfl-text"
+            >
+              <option value="">Selecione um assunto</option>
+              <option value="PMOC">PMOC — Plano de Manutenção</option>
+              <option value="Manutenção">Manutenção preventiva / corretiva</option>
+              <option value="Instalação">Instalação de equipamento</option>
+              <option value="Higienização">Higienização</option>
+              <option value="Garantia Midea">Atendimento em garantia Midea</option>
+              <option value="Garantia Carrier">Atendimento em garantia Carrier</option>
+              <option value="Outro">Outro assunto</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="mensagem" class="block text-sm font-semibold text-gfl-text mb-2">
+              Mensagem
+            </label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              required
+              rows="4"
+              placeholder="Descreva sua necessidade, tipo de equipamento, cidade..."
+              class="w-full px-4 py-3 rounded-xl border border-gfl-border-soft bg-white focus:border-gfl-midea focus:ring-2 focus:ring-gfl-midea/20 outline-none transition-all text-gfl-text resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-gfl-midea hover:bg-gfl-midea-hover text-white px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40 inline-flex items-center justify-center gap-2"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"
+              ></path>
+            </svg>
+            Enviar pelo WhatsApp
+          </button>
+
+          <div class="flex items-start gap-2.5 pt-2 text-xs text-gfl-text-muted">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-gfl-midea shrink-0 mt-0.5"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>
+              Seus dados são tratados conforme nossa
+              <a href="/privacidade" class="text-gfl-midea hover:underline font-semibold">
+                Política de Privacidade · LGPD
+              </a>. Usamos apenas para responder esta solicitação.
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script define:vars={{ whatsappBase: empresa.contato.whatsappRaw }}>
+    document.getElementById('contato-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const nome = (data.get('nome') || '').toString().trim();
+      const telefone = (data.get('telefone') || '').toString().trim();
+      const assunto = (data.get('assunto') || '').toString().trim();
+      const mensagem = (data.get('mensagem') || '').toString().trim();
+
+      const texto = [
+        `Olá, vim pelo site da GFL.`,
+        ``,
+        `*Nome:* ${nome}`,
+        `*Telefone:* ${telefone}`,
+        `*Assunto:* ${assunto}`,
+        ``,
+        `*Mensagem:*`,
+        mensagem
+      ].join('\n');
+
+      const url = `https://wa.me/${whatsappBase}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank', 'noopener');
+    });
+  </script>
+</BaseLayout>
+</content>
+</invoke>

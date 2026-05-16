@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa } from '../lib/empresa';
+---
+
+<BaseLayout
+  title="Política de Privacidade — GFL Service & Repair"
+  description="Política de privacidade e tratamento de dados pessoais da GFL Service & Repair conforme LGPD."
+>
+  <section class="py-16 bg-gfl-bg">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h1 class="text-3xl md:text-4xl font-bold text-gfl-text mb-6">Política de Privacidade</h1>
+      <p class="text-gfl-text-muted mb-4">Última atualização: 16 de maio de 2026</p>
+      <p class="text-gfl-text-muted leading-relaxed mb-4">
+        A {empresa.razaoSocial}, CNPJ {empresa.cnpj}, respeita a privacidade dos visitantes do
+        nosso site e cumpre integralmente a Lei Geral de Proteção de Dados (Lei 13.709/2018 —
+        LGPD).
+      </p>
+      <h2 class="text-xl font-bold text-gfl-text mb-3 mt-8">Dados coletados</h2>
+      <p class="text-gfl-text-muted leading-relaxed mb-4">
+        Coletamos dados pessoais (nome, e-mail, telefone) apenas quando você os fornece
+        voluntariamente em formulários de contato ou orçamento. Não rastreamos comportamento
+        individual além do necessário para análise estatística agregada (Google Analytics).
+      </p>
+      <h2 class="text-xl font-bold text-gfl-text mb-3 mt-8">Finalidade do tratamento</h2>
+      <p class="text-gfl-text-muted leading-relaxed mb-4">
+        Seus dados são utilizados exclusivamente para: responder à sua solicitação de contato,
+        elaborar orçamento, agendar visita técnica e prestar o serviço contratado.
+      </p>
+      <h2 class="text-xl font-bold text-gfl-text mb-3 mt-8">Seus direitos</h2>
+      <p class="text-gfl-text-muted leading-relaxed mb-4">
+        Você tem direito de acesso, correção, exclusão, portabilidade e revogação de consentimento
+        sobre seus dados a qualquer momento. Solicitações via e-mail:
+        <a href={`mailto:${empresa.contato.email}`} class="text-gfl-midea">
+          {empresa.contato.email}
+        </a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

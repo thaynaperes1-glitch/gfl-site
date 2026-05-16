@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa, whatsappLink } from '../lib/empresa';
+
+const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
+---
+
+<BaseLayout
+  title="Nossos Serviços — GFL Service & Repair"
+  description="Manutenção corretiva, preventiva, preditiva, PMOC, instalação e higienização de ar-condicionado. Autorizada oficial Midea Blue Service e Carrier no Vale do Paraíba e Região de Campinas."
+>
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"></div>
+      <div class="absolute top-10 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-10 w-72 h-72 bg-gfl-midea/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase" style="color: white;">
+          <span class="w-1.5 h-1.5 bg-gfl-success rounded-full animate-pulse"></span>
+          6 serviços técnicos completos
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] mb-6" style="color: white;">
+          Soluções <span style="color: #0099DA;">HVAC</span><br />
+          de ponta a ponta.
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl" style="color: rgba(255,255,255,0.85);">
+          Manutenção autorizada Midea Blue Service e Carrier para residências, empresas e indústrias no Vale do Paraíba e Região de Campinas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+        <div data-reveal data-delay="100" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
+          <div class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">Reparo técnico</div>
+          <h3 class="text-2xl font-bold text-gfl-text tracking-tight mb-3">Manutenção Corretiva</h3>
+          <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed mb-5">
+            Equipamento parou de funcionar? Fazemos diagnóstico técnico e reparo com peças originais Midea e Carrier, mantendo a garantia de fábrica.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Diagnóstico em até 24h</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Peças originais Midea/Carrier</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Garantia do serviço de 90 dias</span>
+            </li>
+          </ul>
+          <a href={whatsappLink('Olá, meu equipamento parou de funcionar. Quero solicitar diagnóstico técnico.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+            Solicitar diagnóstico
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+
+        <div data-reveal data-delay="200" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
+          <div class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+              <path d="M16 2v4M8 2v4M3 10h18"></path>
+              <path d="m9 16 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">Cronograma fixo</div>
+          <h3 class="text-2xl font-bold text-gfl-text tracking-tight mb-3">Manutenção Preventiva</h3>
+          <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed mb-5">
+            Cronograma de revisões periódicas para reduzir panes inesperadas, estender vida útil dos equipamentos e otimizar consumo de energia.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Cronograma mensal/trimestral/semestral</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Limpeza completa e ajustes técnicos</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Relatório técnico após cada visita</span>
+            </li>
+          </ul>
+          <a href={whatsappLink('Olá, quero contratar plano de manutenção preventiva.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+            Contratar plano
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+
+        <div data-reveal data-delay="300" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
+          <div class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M3 3v18h18"></path>
+              <path d="m19 9-5 5-4-4-3 3"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">Monitoramento contínuo</div>
+          <h3 class="text-2xl font-bold text-gfl-text tracking-tight mb-3">Manutenção Preditiva</h3>
+          <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed mb-5">
+            Acompanhamento técnico que avalia condições reais de cada componente, antecipa falhas e otimiza investimento em substituições.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Análise de eficiência energética</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Termografia, vibração e isolação</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Plano de substituições antecipadas</span>
+            </li>
+          </ul>
+          <a href={whatsappLink('Olá, quero saber sobre manutenção preditiva para minha empresa.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+            Saber mais
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+
+        <div data-reveal data-delay="400" class="group relative bg-gradient-to-br from-gfl-midea/5 to-gfl-carrier/5 rounded-2xl p-7 md:p-9 border-2 border-gfl-midea hover:shadow-2xl transition-all duration-500">
+          <div class="absolute -top-3 left-7 inline-flex items-center gap-1.5 px-3 py-1 bg-gfl-midea text-white text-[10px] font-bold tracking-wider uppercase rounded-full shadow-lg">
+            <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+            Mais procurado
+          </div>
+          <div class="w-14 h-14 rounded-xl bg-gfl-midea flex items-center justify-center mb-5">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+              <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <path d="M9 12h6M9 16h6"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">Conformidade legal</div>
+          <h3 class="text-2xl font-bold text-gfl-text tracking-tight mb-3">PMOC</h3>
+          <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed mb-5">
+            Plano de Manutenção, Operação e Controle obrigatório por lei (Lei 13.589/2018) para empresas com ambientes climatizados em uso público ou coletivo.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>RT registrado e ART emitida</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Relatórios prontos para Anvisa</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea text-white flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Renovação anual incluída</span>
+            </li>
+          </ul>
+          <a href="/pmoc" class="inline-flex items-center gap-2 bg-gfl-midea hover:bg-gfl-midea-hover text-white px-5 py-3 rounded-lg font-bold text-sm transition-all hover:shadow-xl hover:shadow-gfl-midea/30">
+            Ver detalhes do PMOC
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+
+        <div data-reveal data-delay="500" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
+          <div class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">Equipamento novo</div>
+          <h3 class="text-2xl font-bold text-gfl-text tracking-tight mb-3">Instalação Autorizada</h3>
+          <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed mb-5">
+            Instalação por técnicos certificados pela própria fabricante, preservando a garantia de fábrica e seguindo todas as normas técnicas.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Garantia de fábrica preservada</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Vácuo conforme norma técnica</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Teste de funcionamento e laudo</span>
+            </li>
+          </ul>
+          <a href={whatsappLink('Olá, quero solicitar instalação de ar-condicionado.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+            Solicitar instalação
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+
+        <div data-reveal data-delay="600" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
+          <div class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M12 2v6m0 0 3-3m-3 3L9 5"></path>
+              <path d="M20 12a8 8 0 1 1-16 0c0-3.5 2.5-5 4-6"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">Saúde e qualidade do ar</div>
+          <h3 class="text-2xl font-bold text-gfl-text tracking-tight mb-3">Higienização Técnica</h3>
+          <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed mb-5">
+            Limpeza profunda com produtos bactericidas específicos. Remove fungos, ácaros e biofilme das serpentinas — não é só limpar o filtro.
+          </p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Higienização interna e externa</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Produtos bactericidas certificados</span>
+            </li>
+            <li class="flex items-start gap-2 text-sm text-gfl-text">
+              <div class="w-5 h-5 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <span>Recomendado a cada 6-12 meses</span>
+            </li>
+          </ul>
+          <a href={whatsappLink('Olá, quero agendar higienização do meu ar-condicionado.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+            Agendar higienização
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-carrier relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/20 to-transparent"></div>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-gfl-midea/30 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 max-w-3xl mx-auto" style="color: white;">
+        Não sabe qual serviço<br />
+        <span style="color: #0099DA;">é o ideal pra você?</span>
+      </h2>
+      <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: rgba(255,255,255,0.85);">
+        Fale com nossa equipe técnica e receba orientação personalizada. Atendemos {totalCidades}+ cidades no Vale do Paraíba e Região de Campinas.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href={whatsappLink('Olá, vim do site GFL e quero orientação sobre qual serviço contratar.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+          Falar com técnico no WhatsApp
+        </a>
+        <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
+          Outras formas de contato
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

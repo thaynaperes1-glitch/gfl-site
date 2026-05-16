@@ -1,0 +1,82 @@
+---
+import { empresa } from '../../lib/empresa';
+
+const navLinks = [
+  { href: '/servicos', label: 'Serviços' },
+  { href: '/pmoc', label: 'PMOC' },
+  { href: '/sobre', label: 'Sobre' },
+  { href: '/aprenda', label: 'Aprenda' },
+  { href: '/contato', label: 'Contato' }
+];
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-gfl-border-soft">
+  <div class="container mx-auto px-4 py-4 md:py-5">
+    <div class="flex items-center justify-between gap-4">
+
+      <a href="/" class="flex items-center gap-3 shrink-0">
+        <img src="/images/logos/gfl-logo-fundo-branco.png" alt="GFL Service & Repair" class="h-12 md:h-14" />
+        <div class="hidden md:flex flex-col leading-tight">
+          <span class="text-sm font-bold text-gfl-midea">Centro de Serviços Autorizado</span>
+          <span class="text-[10px] font-bold text-gfl-text-muted tracking-widest uppercase">Midea · Carrier</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-sm font-semibold text-gfl-text hover:text-gfl-midea transition-colors">
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="/contato" class="hidden md:inline-flex bg-gfl-midea hover:bg-gfl-midea-hover text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-colors">
+          Orçamento
+        </a>
+
+        <button id="mobile-menu-toggle" aria-label="Abrir menu" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg hover:bg-gfl-bg-soft transition-colors">
+          <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-text">
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-text hidden">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-2 border-t border-gfl-border-soft mt-4">
+      <nav class="flex flex-col gap-1">
+        {navLinks.map(link => (
+          <a href={link.href} class="px-4 py-3 rounded-lg text-base font-semibold text-gfl-text hover:bg-gfl-bg-soft hover:text-gfl-midea transition-colors">
+            {link.label}
+          </a>
+        ))}
+        <a href="/contato" class="mt-2 mx-4 bg-gfl-midea hover:bg-gfl-midea-hover text-white px-5 py-3.5 rounded-lg font-bold text-center transition-colors">
+          Solicitar Orçamento
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+        toggle.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
+      });
+    }
+  });
+</script>

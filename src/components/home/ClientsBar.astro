@@ -1,0 +1,65 @@
+---
+const tipos = [
+  'Hospitais',
+  'Indústrias',
+  'Hotéis',
+  'Restaurantes',
+  'Escolas',
+  'Escritórios',
+  'Comércio',
+  'Condomínios',
+  'Clínicas',
+  'Shoppings'
+];
+const duplicados = [...tipos, ...tipos];
+---
+
+<section class="bg-white py-10 border-y border-gfl-border-soft overflow-hidden">
+  <div
+    class="text-center text-xs text-gfl-text-muted font-semibold tracking-widest uppercase mb-5"
+  >
+    Clientes B2B que atendemos no Vale do Paraíba e Região de Campinas
+  </div>
+  <div class="marquee-container">
+    <div class="marquee-track">
+      {
+        duplicados.map((tipo) => (
+          <div class="marquee-item">
+            <span class="text-2xl font-medium text-gfl-text-muted whitespace-nowrap">{tipo}</span>
+            <span class="text-gfl-midea text-2xl">·</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 50s linear infinite;
+    gap: 2rem;
+  }
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-shrink: 0;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
+</style>

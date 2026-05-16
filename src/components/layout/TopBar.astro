@@ -1,0 +1,21 @@
+---
+import { empresa } from '../../lib/empresa';
+---
+
+<div class="bg-gfl-bg-soft border-b border-gfl-border-soft">
+  <div
+    class="container mx-auto py-2 px-4 flex justify-between items-center text-xs text-gfl-text-muted"
+  >
+    <span>
+      SAC:
+      <a href={`tel:${empresa.contato.telefoneRaw}`} class="hover:text-gfl-midea">
+        {empresa.contato.telefone}
+      </a>
+      ·
+      <a href={`mailto:${empresa.contato.email}`} class="hover:text-gfl-midea">
+        {empresa.contato.email}
+      </a>
+    </span>
+    <span class="hidden md:inline">SJC · Jacareí · Vale do Paraíba</span>
+  </div>
+</div>

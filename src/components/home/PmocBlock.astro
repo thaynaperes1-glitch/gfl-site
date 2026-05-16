@@ -1,0 +1,297 @@
+---
+import { empresa } from '../../lib/empresa';
+---
+
+<section data-reveal class="relative py-20 md:py-28 overflow-hidden bg-gfl-bg">
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute top-0 left-0 w-2/3 h-full bg-gradient-to-br from-gfl-carrier via-gfl-carrier to-[#0f1a3a]"
+    >
+    </div>
+    <div
+      class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gfl-midea/20 to-transparent"
+    >
+    </div>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-gfl-midea/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 left-10 w-96 h-96 bg-gfl-midea/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-6 text-white">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase"
+        >
+          <span class="w-1.5 h-1.5 bg-gfl-warning rounded-full animate-pulse"></span>
+          PMOC · Lei 13.589/2018
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
+          Sua empresa precisa<br />
+          <span class="text-gfl-midea">de PMOC?</span>
+        </h2>
+
+        <p class="text-base md:text-lg text-white/85 leading-relaxed mb-8 max-w-lg">
+          Multas chegam a <strong class="text-white">R$ 1.500.000</strong>. Executamos PMOC
+          conforme legislação federal — autorizada oficial Midea + Carrier com Responsável Técnico
+          registrado.
+        </p>
+
+        <div class="grid grid-cols-2 gap-3 max-w-md">
+          <div
+            class="group p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10 hover:border-gfl-midea/50 hover:bg-white/10 transition-all"
+          >
+            <div class="flex items-center gap-2 mb-1.5">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea"
+              >
+                <path d="M9 12l2 2 4-4"></path>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              <span class="text-xs font-bold tracking-wider uppercase text-white/70">RT</span>
+            </div>
+            <div class="text-sm font-semibold text-white">Responsável Técnico registrado</div>
+          </div>
+
+          <div
+            class="group p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10 hover:border-gfl-midea/50 hover:bg-white/10 transition-all"
+          >
+            <div class="flex items-center gap-2 mb-1.5">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span class="text-xs font-bold tracking-wider uppercase text-white/70">24h</span>
+            </div>
+            <div class="text-sm font-semibold text-white">Diagnóstico técnico inicial</div>
+          </div>
+
+          <div
+            class="group p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10 hover:border-gfl-midea/50 hover:bg-white/10 transition-all"
+          >
+            <div class="flex items-center gap-2 mb-1.5">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea"
+              >
+                <path d="M20 10c0 7-8 13-8 13s-8-6-8-13a8 8 0 0 1 16 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span class="text-xs font-bold tracking-wider uppercase text-white/70">+30</span>
+            </div>
+            <div class="text-sm font-semibold text-white">Cidades em 2 regiões</div>
+          </div>
+
+          <div
+            class="group p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10 hover:border-gfl-midea/50 hover:bg-white/10 transition-all"
+          >
+            <div class="flex items-center gap-2 mb-1.5">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span class="text-xs font-bold tracking-wider uppercase text-white/70">NBR</span>
+            </div>
+            <div class="text-sm font-semibold text-white">16401, Anvisa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="relative">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-gfl-midea to-gfl-midea-hover rounded-2xl blur opacity-30"
+          >
+          </div>
+          <div class="relative bg-white rounded-2xl shadow-2xl p-7 md:p-10">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="w-2 h-2 bg-gfl-success rounded-full animate-pulse"></span>
+              <div class="text-xs text-gfl-midea font-bold tracking-widest uppercase">
+                Proposta em 2 minutos
+              </div>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gfl-text tracking-tight mb-1">
+              Calcule seu PMOC
+            </h3>
+            <p class="text-sm text-gfl-text-muted mb-7">
+              Resposta direta no WhatsApp com nossa equipe técnica.
+            </p>
+
+            <div class="space-y-5">
+              <div>
+                <label
+                  class="flex items-center gap-2 text-xs font-bold text-gfl-carrier mb-2 tracking-wider uppercase"
+                >
+                  <span
+                    class="flex items-center justify-center w-5 h-5 bg-gfl-midea text-white rounded-full text-[10px]"
+                  >
+                    1
+                  </span>
+                  Quantos aparelhos sua empresa tem?
+                </label>
+                <select
+                  id="pmoc-aparelhos"
+                  class="w-full px-4 py-3.5 border-2 border-gfl-border-soft rounded-xl focus:outline-none focus:border-gfl-midea hover:border-gfl-border text-gfl-text bg-white transition-colors"
+                >
+                  <option value="">Selecione a quantidade...</option>
+                  <option value="1 a 5 aparelhos">1 a 5 aparelhos</option>
+                  <option value="6 a 20 aparelhos">6 a 20 aparelhos</option>
+                  <option value="21 a 50 aparelhos">21 a 50 aparelhos</option>
+                  <option value="mais de 50 aparelhos">Mais de 50 aparelhos</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="flex items-center gap-2 text-xs font-bold text-gfl-carrier mb-2 tracking-wider uppercase"
+                >
+                  <span
+                    class="flex items-center justify-center w-5 h-5 bg-gfl-midea text-white rounded-full text-[10px]"
+                  >
+                    2
+                  </span>
+                  Qual o setor da sua empresa?
+                </label>
+                <select
+                  id="pmoc-setor"
+                  class="w-full px-4 py-3.5 border-2 border-gfl-border-soft rounded-xl focus:outline-none focus:border-gfl-midea hover:border-gfl-border text-gfl-text bg-white transition-colors"
+                >
+                  <option value="">Selecione o setor...</option>
+                  <option value="Indústria">Indústria</option>
+                  <option value="Hospital ou Clínica">Hospital / Clínica</option>
+                  <option value="Hotel ou Restaurante">Hotel / Restaurante</option>
+                  <option value="Escola">Escola</option>
+                  <option value="Escritório ou Comércio">Escritório / Comércio</option>
+                  <option value="Condomínio">Condomínio</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="flex items-center gap-2 text-xs font-bold text-gfl-carrier mb-2 tracking-wider uppercase"
+                >
+                  <span
+                    class="flex items-center justify-center w-5 h-5 bg-gfl-midea text-white rounded-full text-[10px]"
+                  >
+                    3
+                  </span>
+                  Cidade
+                  <span class="text-gfl-text-muted font-normal normal-case tracking-normal">
+                    (opcional)
+                  </span>
+                </label>
+                <input
+                  id="pmoc-cidade"
+                  type="text"
+                  placeholder="Ex: São José dos Campos"
+                  class="w-full px-4 py-3.5 border-2 border-gfl-border-soft rounded-xl focus:outline-none focus:border-gfl-midea hover:border-gfl-border text-gfl-text transition-colors"
+                />
+              </div>
+
+              <button
+                id="pmoc-enviar"
+                class="group w-full bg-gfl-midea hover:bg-gfl-midea-hover text-white px-6 py-4 rounded-xl font-bold text-base transition-all hover:shadow-xl hover:shadow-gfl-midea/30 flex items-center justify-center gap-2 mt-2"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"
+                  ></path>
+                </svg>
+                Receber proposta no WhatsApp
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="group-hover:translate-x-1 transition-transform"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+
+              <div class="flex items-center justify-center gap-2 pt-2">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-gfl-text-muted"
+                >
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span class="text-[11px] text-gfl-text-muted">
+                  Seus dados estão protegidos pela LGPD
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ whatsRaw: empresa.contato.whatsappRaw }}>
+  const btn = document.getElementById('pmoc-enviar');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const aparelhos = document.getElementById('pmoc-aparelhos').value;
+      const setor = document.getElementById('pmoc-setor').value;
+      const cidade = document.getElementById('pmoc-cidade').value;
+      if (!aparelhos || !setor) {
+        alert('Por favor, selecione quantos aparelhos e o setor da empresa.');
+        return;
+      }
+      const cidadeTexto = cidade ? `, em ${cidade}` : '';
+      const msg = `Olá! Vim pelo site da GFL e quero uma proposta de PMOC. Minha empresa tem ${aparelhos}, é do setor ${setor}${cidadeTexto}.`;
+      const url = `https://wa.me/${whatsRaw}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    });
+  }
+</script>

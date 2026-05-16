@@ -1,0 +1,70 @@
+---
+import { empresa } from '../../lib/empresa';
+---
+
+<footer class="bg-gfl-bg-soft border-t border-gfl-border-soft mt-16">
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <div class="text-2xl font-bold text-gfl-text tracking-tight mb-2">
+          GFL <span class="text-gfl-midea">Service</span>
+        </div>
+        <div class="text-[10px] text-gfl-text-muted font-bold tracking-widest uppercase mb-4 leading-relaxed">
+          Centro de Serviços Autorizado<br />Midea · Carrier
+        </div>
+        <p class="text-sm text-gfl-text-muted leading-relaxed">
+          Atendendo Vale do Paraíba e Região de Campinas desde 2015.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-gfl-text mb-3">Serviços</h4>
+        <ul class="space-y-2 text-xs text-gfl-text-muted">
+          <li><a href="/pmoc" class="hover:text-gfl-midea">PMOC</a></li>
+          <li><a href="/servicos" class="hover:text-gfl-midea">Manutenção</a></li>
+          <li><a href="/servicos" class="hover:text-gfl-midea">Instalação</a></li>
+          <li><a href="/servicos" class="hover:text-gfl-midea">Higienização</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-gfl-text mb-3">Atendimento</h4>
+        <ul class="space-y-2 text-xs text-gfl-text-muted">
+          <li>
+            <a href={`tel:${empresa.contato.telefoneRaw}`} class="hover:text-gfl-midea">
+              {empresa.contato.telefone}
+            </a>
+          </li>
+          <li>WhatsApp: {empresa.contato.whatsapp}</li>
+          <li>
+            <a href={`mailto:${empresa.contato.email}`} class="hover:text-gfl-midea">
+              {empresa.contato.email}
+            </a>
+          </li>
+          <li>{empresa.horario.completo}</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-gfl-text mb-3">Endereço</h4>
+        <p class="text-xs text-gfl-text-muted leading-relaxed">
+          {empresa.endereco.rua}, {empresa.endereco.numero}<br />
+          {empresa.endereco.bairro}<br />
+          {empresa.endereco.cidade} / {empresa.endereco.uf}<br />
+          CEP {empresa.endereco.cep}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="border-t border-gfl-border-soft mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3"
+    >
+      <span class="text-xs text-gfl-text-muted">
+        © 2026 {empresa.razaoSocial}
+      </span>
+      <a href="/privacidade" class="text-xs text-gfl-text-muted hover:text-gfl-midea">
+        Política de Privacidade · LGPD
+      </a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,68 @@
+---
+const servicos = [
+  {
+    title: 'Manutenção Corretiva',
+    desc: 'Diagnóstico e reparo de defeitos com peças originais Midea e Carrier.',
+    link: '/servicos',
+    icon: `<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>`
+  },
+  {
+    title: 'Manutenção Preventiva',
+    desc: 'Cronograma de revisões periódicas para evitar panes inesperadas.',
+    link: '/servicos',
+    icon: `<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/>`
+  },
+  {
+    title: 'Manutenção Preditiva',
+    desc: 'Acompanhamento técnico que avalia vida útil dos componentes.',
+    link: '/servicos',
+    icon: `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>`
+  },
+  {
+    title: 'PMOC',
+    desc: 'Plano de Manutenção, Operação e Controle conforme Lei 13.589/2018.',
+    link: '/pmoc',
+    icon: `<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>`
+  }
+];
+---
+
+<section class="bg-gfl-bg py-12 md:py-16" data-reveal>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <div class="text-xs text-gfl-midea font-bold tracking-widest mb-2 uppercase">
+        Nossos serviços
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold text-gfl-text">Soluções HVAC completas</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {
+        servicos.map((s, idx) => (
+          <a
+            href={s.link}
+            data-reveal
+            data-delay={String((idx + 1) * 100)}
+            class="block p-6 bg-white border border-gfl-border-soft rounded-lg hover:border-gfl-midea hover:shadow-md transition-all"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-gfl-midea mb-4"
+              set:html={s.icon}
+            />
+            <h3 class="text-lg font-bold text-gfl-text mb-2">{s.title}</h3>
+            <p class="text-sm text-gfl-text-muted leading-relaxed">{s.desc}</p>
+            <div class="mt-4 text-xs text-gfl-midea font-semibold">Saiba mais →</div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

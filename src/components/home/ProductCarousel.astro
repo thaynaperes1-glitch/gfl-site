@@ -1,0 +1,145 @@
+---
+import { whatsappLink } from '../../lib/empresa';
+
+const slides = [
+  {
+    img: '/images/produtos/midea-ar-condicionado-ambientada-quarto.webp',
+    alt: 'Ar-condicionado Midea instalado em quarto residencial',
+    overline: 'AR-CONDICIONADO',
+    title: 'Seu split parou de gelar?',
+    subtitle:
+      'Diagnóstico técnico Midea autorizado em até 24h. Peças originais, garantia de fábrica preservada.',
+    cta1: {
+      label: 'Agendar visita',
+      href: whatsappLink('Olá, meu split não está gelando. Posso agendar uma visita?')
+    },
+    cta2: { label: 'Saber mais', href: '/servicos' }
+  },
+  {
+    img: '/images/produtos/midea-lava-e-seca-aberta-roupas.webp',
+    alt: 'Lava e seca Midea com roupas',
+    overline: 'LAVA E SECA',
+    title: 'Lava e seca com erro no painel?',
+    subtitle:
+      'Centro de Serviços Autorizado: técnico capacitado pela própria Midea, com peças originais.',
+    cta1: {
+      label: 'Solicitar atendimento',
+      href: whatsappLink('Olá, minha lava e seca está com erro. Pode me ajudar?')
+    },
+    cta2: { label: 'Ver serviços', href: '/servicos' }
+  },
+  {
+    img: '/images/produtos/midea-linha-vrf-industrial.webp',
+    alt: 'Linha VRF Midea industrial',
+    overline: 'PMOC INDUSTRIAL',
+    title: 'Sua empresa precisa de PMOC?',
+    subtitle:
+      'Plano de Manutenção, Operação e Controle conforme Lei 13.589/2018, com Responsável Técnico registrado.',
+    cta1: { label: 'Cotar PMOC', href: '/pmoc' },
+    cta2: { label: 'Saber mais', href: '/pmoc' }
+  },
+  {
+    img: '/images/produtos/midea-ar-condicionado-comando-voz.webp',
+    alt: 'Ar-condicionado Midea com comando de voz',
+    overline: 'LINHA SMART',
+    title: 'Ar smart com Alexa ou Google?',
+    subtitle:
+      'Mantemos toda a tecnologia Midea inverter e smart sem perder garantia. Atendemos toda linha completa.',
+    cta1: { label: 'Ver todos os serviços', href: '/servicos' },
+    cta2: {
+      label: 'Falar com técnico',
+      href: whatsappLink('Olá, gostaria de saber mais sobre os serviços.')
+    }
+  }
+];
+---
+
+<section class="bg-gfl-bg-soft py-12 md:py-16 overflow-hidden" data-reveal>
+  <div class="container mx-auto px-4 mb-8 text-center">
+    <div class="text-xs text-gfl-midea font-bold tracking-widest mb-2 uppercase">
+      Linha completa Midea
+    </div>
+    <h2 class="text-2xl md:text-3xl font-bold text-gfl-text">
+      Atendemos toda linha de produtos Midea
+    </h2>
+    <p class="text-sm text-gfl-text-muted mt-2">
+      Como autorizada oficial, mantemos a garantia de fábrica em todos os equipamentos
+    </p>
+  </div>
+
+  <div class="container mx-auto px-4">
+    <div
+      class="swiper product-carousel bg-white rounded-lg overflow-hidden border border-gfl-border-soft shadow-sm"
+    >
+      <div class="swiper-wrapper">
+        {
+          slides.map((s) => (
+            <div class="swiper-slide">
+              <div class="grid grid-cols-1 md:grid-cols-2 min-h-[480px]">
+                <div class="bg-gfl-bg-soft flex items-center justify-center p-2">
+                  <img
+                    src={s.img}
+                    alt={s.alt}
+                    loading="lazy"
+                    class="max-h-[420px] w-auto object-contain"
+                  />
+                </div>
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                  <div class="text-xs font-bold text-gfl-midea tracking-widest mb-3 uppercase">
+                    {s.overline}
+                  </div>
+                  <h3 class="text-2xl md:text-3xl font-bold text-gfl-text mb-3 leading-tight">
+                    {s.title}
+                  </h3>
+                  <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed mb-6">
+                    {s.subtitle}
+                  </p>
+                  <div class="flex flex-wrap gap-3">
+                    <a
+                      href={s.cta1.href}
+                      target={s.cta1.href.startsWith('http') ? '_blank' : '_self'}
+                      rel={s.cta1.href.startsWith('http') ? 'noopener' : undefined}
+                      class="bg-gfl-midea hover:bg-gfl-midea-hover text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                    >
+                      {s.cta1.label}
+                    </a>
+                    <a
+                      href={s.cta2.href}
+                      class="bg-white text-gfl-carrier border border-gfl-carrier hover:bg-gfl-carrier hover:text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                    >
+                      {s.cta2.label}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <div
+        class="swiper-pagination !relative !bottom-0 py-5 bg-white border-t border-gfl-border-soft"
+      >
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+  import 'swiper/css/effect-fade';
+
+  new Swiper('.product-carousel', {
+    modules: [Autoplay, Pagination, EffectFade],
+    loop: true,
+    autoplay: { delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    speed: 800,
+    spaceBetween: 0,
+    slidesPerView: 1
+  });
+</script>

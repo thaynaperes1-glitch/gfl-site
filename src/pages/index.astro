@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import ProductCarousel from '../components/home/ProductCarousel.astro';
+import StatsBar from '../components/home/StatsBar.astro';
+import ClientsBar from '../components/home/ClientsBar.astro';
+import ServicesGrid from '../components/home/ServicesGrid.astro';
+import PmocBlock from '../components/home/PmocBlock.astro';
+import AreasAtendidas from '../components/home/AreasAtendidas.astro';
+import CTABanner from '../components/home/CTABanner.astro';
+---
+
+<BaseLayout
+  title="GFL Service & Repair — Autorizada Midea Blue Service e Carrier no Vale do Paraíba"
+  description="Centro de Serviços Autorizado Midea e Carrier em São José dos Campos. PMOC, manutenção e instalação de ar-condicionado para empresas e residências do Vale do Paraíba."
+>
+  <Hero />
+  <StatsBar />
+  <ClientsBar />
+  <ProductCarousel />
+  <ServicesGrid />
+  <PmocBlock />
+  <AreasAtendidas />
+  <CTABanner />
+</BaseLayout>

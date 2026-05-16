@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gflservice.com.br/sitemap-index.xml

@@ -1,0 +1,498 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa } from '../lib/empresa';
+
+const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
+const anoFundacao = 2015;
+const anoAtual = new Date().getFullYear();
+const anosExperiencia = anoAtual - anoFundacao;
+---
+
+<BaseLayout
+  title="Sobre a GFL — Centro de Serviços Autorizado Midea Carrier"
+  description="Conheça a GFL Service & Repair, Centro de Serviços Autorizado oficial Midea Blue Service e Carrier no Vale do Paraíba e Região de Campinas desde 2015."
+>
+  <section class="relative py-20 md:py-32 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div
+        class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"
+      >
+      </div>
+      <div class="absolute top-20 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-72 h-72 bg-gfl-midea/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase"
+          style="color: white;"
+        >
+          <span class="w-1.5 h-1.5 bg-gfl-success rounded-full animate-pulse"></span>
+          Quem somos
+        </div>
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] mb-6"
+          style="color: white;"
+        >
+          Mais que uma<br />
+          <span style="color: #0099DA;">autorizada.</span>
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl" style="color: rgba(255,255,255,0.85);">
+          Uma rede técnica especializada em HVAC, autorizada oficial Midea Blue Service e Carrier,
+          operando no Vale do Paraíba e Região de Campinas desde {anoFundacao}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-12 md:py-16 bg-white border-b border-gfl-border-soft">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="text-4xl md:text-6xl font-bold text-gfl-midea tracking-tight">
+            {anosExperiencia}+
+          </div>
+          <div
+            class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold"
+          >
+            Anos de mercado
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-6xl font-bold text-gfl-midea tracking-tight">
+            +30
+          </div>
+          <div
+            class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold"
+          >
+            Cidades atendidas
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-6xl font-bold text-gfl-midea tracking-tight">
+            {empresa.google.rating}
+          </div>
+          <div
+            class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold"
+          >
+            Nota Google
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-6xl font-bold text-gfl-midea tracking-tight">
+            {empresa.google.reviewCount}+
+          </div>
+          <div
+            class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold"
+          >
+            Avaliações reais
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+        <div class="lg:col-span-5">
+          <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">
+            Nossa história
+          </div>
+          <h2
+            class="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] text-gfl-text mb-4"
+          >
+            De serviço técnico<br />
+            <span class="text-gfl-midea">à referência regional</span>
+          </h2>
+          <p class="text-gfl-text-muted leading-relaxed">
+            Uma trajetória construída marca por marca, contrato por contrato, atendimento por
+            atendimento.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="relative pl-8 border-l-2 border-gfl-border-soft space-y-10">
+            <div data-reveal data-delay="100" class="relative">
+              <div
+                class="absolute -left-[41px] w-5 h-5 rounded-full bg-gfl-midea ring-4 ring-white"
+              >
+              </div>
+              <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-1.5">
+                2015 · Fundação
+              </div>
+              <h3 class="text-xl font-bold text-gfl-text mb-2">
+                O início em São José dos Campos
+              </h3>
+              <p class="text-gfl-text-muted leading-relaxed text-sm">
+                A GFL Service & Repair foi fundada com a missão de oferecer manutenção técnica de
+                excelência em sistemas de climatização e refrigeração no Vale do Paraíba.
+              </p>
+            </div>
+
+            <div data-reveal data-delay="200" class="relative">
+              <div
+                class="absolute -left-[41px] w-5 h-5 rounded-full bg-gfl-midea ring-4 ring-white"
+              >
+              </div>
+              <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-1.5">
+                Crescimento · Equipe técnica
+              </div>
+              <h3 class="text-xl font-bold text-gfl-text mb-2">Formação da equipe própria</h3>
+              <p class="text-gfl-text-muted leading-relaxed text-sm">
+                Capacitação contínua de técnicos pela própria Midea e Carrier, sem terceirização.
+                Investimento em ferramentas, peças originais e protocolos de qualidade.
+              </p>
+            </div>
+
+            <div data-reveal data-delay="300" class="relative">
+              <div
+                class="absolute -left-[41px] w-5 h-5 rounded-full bg-gfl-midea ring-4 ring-white"
+              >
+              </div>
+              <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-1.5">
+                Reconhecimento · Credenciamento oficial
+              </div>
+              <h3 class="text-xl font-bold text-gfl-text mb-2">Centro de Serviços Autorizado</h3>
+              <p class="text-gfl-text-muted leading-relaxed text-sm">
+                Conquistamos a certificação como Centro de Serviços Autorizado pelas duas maiores marcas
+                do setor: Midea (programa Blue Service) e Carrier — uma combinação rara no mercado
+                regional.
+              </p>
+            </div>
+
+            <div data-reveal data-delay="400" class="relative">
+              <div
+                class="absolute -left-[41px] w-5 h-5 rounded-full bg-gfl-midea ring-4 ring-white animate-pulse"
+              >
+              </div>
+              <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-1.5">
+                Hoje · Expansão regional
+              </div>
+              <h3 class="text-xl font-bold text-gfl-text mb-2">
+                +30 cidades em duas regiões
+              </h3>
+              <p class="text-gfl-text-muted leading-relaxed text-sm">
+                Atendemos residências, empresas, indústrias, hospitais e hotéis em todo o Vale do
+                Paraíba e Região de Campinas, com {empresa.google.reviewCount}+ avaliações 4,7★ no
+                Google.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-bg-soft">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+        <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">
+          Princípios
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gfl-text tracking-tight leading-[1.05]"
+        >
+          O que nos<br />
+          <span class="text-gfl-midea">move todos os dias</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div
+          data-reveal
+          data-delay="100"
+          class="group relative bg-white rounded-2xl p-8 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500"
+        >
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gfl-midea/10 to-transparent rounded-bl-full rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea group-hover:text-white transition-colors duration-300"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">
+              Missão
+            </div>
+            <h3 class="text-xl font-bold text-gfl-text mb-3">Manter ambientes funcionando</h3>
+            <p class="text-sm text-gfl-text-muted leading-relaxed">
+              Excelência técnica e atendimento humano, preservando a garantia de fábrica em cada
+              equipamento que tocamos.
+            </p>
+          </div>
+        </div>
+
+        <div
+          data-reveal
+          data-delay="200"
+          class="group relative bg-white rounded-2xl p-8 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500"
+        >
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gfl-midea/10 to-transparent rounded-bl-full rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea group-hover:text-white transition-colors duration-300"
+              >
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">Visão</div>
+            <h3 class="text-xl font-bold text-gfl-text mb-3">Ser a primeira escolha</h3>
+            <p class="text-sm text-gfl-text-muted leading-relaxed">
+              Reconhecida pela qualidade e confiança como referência em serviço técnico HVAC
+              autorizado em duas regiões estratégicas de SP.
+            </p>
+          </div>
+        </div>
+
+        <div
+          data-reveal
+          data-delay="300"
+          class="group relative bg-white rounded-2xl p-8 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500"
+        >
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gfl-midea/10 to-transparent rounded-bl-full rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          >
+          </div>
+          <div class="relative">
+            <div
+              class="w-14 h-14 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-5 group-hover:bg-gfl-midea group-hover:scale-110 transition-all duration-300"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gfl-midea group-hover:text-white transition-colors duration-300"
+              >
+                <path d="M6 3h12l4 6-10 13L2 9Z"></path>
+                <path d="M11 3 8 9l4 13 4-13-3-6"></path>
+                <path d="M2 9h20"></path>
+              </svg>
+            </div>
+            <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">
+              Valores
+            </div>
+            <h3 class="text-xl font-bold text-gfl-text mb-3">Excelência sem atalhos</h3>
+            <p class="text-sm text-gfl-text-muted leading-relaxed">
+              Compromisso com o prazo, transparência no atendimento, respeito às pessoas e ao
+              ambiente. Sem terceirização e sem promessas vazias.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-bg relative overflow-hidden">
+    <div
+      class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gfl-midea/5 to-transparent pointer-events-none"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+        <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">
+          Certificações
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gfl-text tracking-tight leading-[1.05]"
+        >
+          Credenciamento oficial<br />
+          <span class="text-gfl-midea">das duas líderes do setor</span>
+        </h2>
+        <p class="text-gfl-text-muted text-base md:text-lg mt-5 max-w-2xl mx-auto">
+          Não somos apenas mais uma assistência técnica. Somos parceiros credenciados das marcas
+          que você confia.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div
+          data-reveal
+          data-delay="100"
+          class="group relative bg-gradient-to-br from-white to-gfl-bg-soft rounded-2xl p-8 md:p-10 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500"
+        >
+          <div
+            class="absolute top-4 right-4 inline-flex items-center gap-1.5 px-2.5 py-1 bg-gfl-success/10 text-gfl-success text-[10px] font-bold tracking-wider uppercase rounded-full"
+          >
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Ativo
+          </div>
+          <div
+            class="w-16 h-16 rounded-2xl bg-gfl-midea/10 flex items-center justify-center mb-6 group-hover:bg-gfl-midea transition-colors"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-gfl-midea group-hover:text-white transition-colors"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">
+            Programa Blue Service
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gfl-text tracking-tight mb-3">
+            Autorizada Midea
+          </h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed mb-4">
+            Centro de Serviços Autorizado oficial Midea, integrante do programa Blue Service.
+            Acesso direto a peças originais, treinamento contínuo e garantia de fábrica preservada.
+          </p>
+          <div
+            class="flex items-center gap-2 text-xs text-gfl-text font-semibold pt-4 border-t border-gfl-border-soft"
+          >
+            <span class="w-2 h-2 bg-gfl-success rounded-full"></span>
+            Linha completa: ar-condicionado, refrigeração, linha branca
+          </div>
+        </div>
+
+        <div
+          data-reveal
+          data-delay="200"
+          class="group relative bg-gradient-to-br from-white to-gfl-bg-soft rounded-2xl p-8 md:p-10 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500"
+        >
+          <div
+            class="absolute top-4 right-4 inline-flex items-center gap-1.5 px-2.5 py-1 bg-gfl-success/10 text-gfl-success text-[10px] font-bold tracking-wider uppercase rounded-full"
+          >
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+            Ativo
+          </div>
+          <div
+            class="w-16 h-16 rounded-2xl bg-gfl-midea/10 flex items-center justify-center mb-6 group-hover:bg-gfl-midea transition-colors"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-gfl-midea group-hover:text-white transition-colors"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div class="text-xs font-bold text-gfl-midea tracking-widest uppercase mb-2">
+            Linha profissional
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-gfl-text tracking-tight mb-3">
+            Autorizada Carrier
+          </h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed mb-4">
+            Centro de Serviços Autorizado Carrier — referência mundial em HVAC comercial e
+            industrial. Atendemos VRF, chillers, splits e sistemas centrais com suporte técnico
+            oficial.
+          </p>
+          <div
+            class="flex items-center gap-2 text-xs text-gfl-text font-semibold pt-4 border-t border-gfl-border-soft"
+          >
+            <span class="w-2 h-2 bg-gfl-success rounded-full"></span>
+            Foco: indústria, comércio, hospitais, hotéis
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-24 md:py-32 min-h-[480px] bg-gfl-carrier relative overflow-hidden flex items-center">
+    <div
+      class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/20 to-transparent"
+    >
+    </div>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-gfl-midea/30 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h2
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 max-w-3xl mx-auto"
+        style="color: white;"
+      >
+        Pronto para trabalhar<br />
+        <span style="color: #0099DA;">com uma autorizada oficial?</span>
+      </h2>
+      <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: rgba(255,255,255,0.85);">
+        Fale com nossa equipe técnica e receba diagnóstico em até 24h. Atendemos todo o Vale do
+        Paraíba e Região de Campinas.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a
+          href="/contato"
+          class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40"
+          style="color: white;"
+        >
+          Solicitar orçamento
+        </a>
+        <a
+          href="/pmoc"
+          class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all"
+          style="color: white;"
+        >
+          Saber mais sobre PMOC
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa, whatsappLink } from '../lib/empresa';
+
+const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
+---
+
+<BaseLayout
+  title="PMOC — Plano de Manutenção, Operação e Controle | GFL Service & Repair"
+  description="PMOC conforme Lei 13.589/2018 para empresas e indústrias no Vale do Paraíba e Região de Campinas. Autorizada oficial Midea Blue Service e Carrier com Responsável Técnico registrado."
+>
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"></div>
+      <div class="absolute top-10 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-10 w-72 h-72 bg-gfl-midea/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase" style="color: white;">
+          <span class="w-1.5 h-1.5 bg-gfl-warning rounded-full animate-pulse"></span>
+          Lei Federal 13.589/2018
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] mb-6" style="color: white;">
+          PMOC para sua<br />
+          <span style="color: #0099DA;">empresa ou indústria.</span>
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl mb-8" style="color: rgba(255,255,255,0.85);">
+          Plano de Manutenção, Operação e Controle conforme legislação federal. Executado por Centro de Serviços Autorizado Midea + Carrier com Responsável Técnico registrado.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href={whatsappLink('Olá, vim do site GFL e quero cotar PMOC para minha empresa.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+            Solicitar diagnóstico gratuito
+          </a>
+          <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
+            Falar com técnico
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-12 md:py-16 bg-white border-b border-gfl-border-soft">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-gfl-midea tracking-tight">RT</div>
+          <div class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold">Responsável Técnico registrado</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-gfl-midea tracking-tight">24h</div>
+          <div class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold">Diagnóstico inicial</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-gfl-midea tracking-tight">+30</div>
+          <div class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold">Cidades atendidas</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl md:text-5xl font-bold text-gfl-midea tracking-tight">NBR</div>
+          <div class="text-xs md:text-sm text-gfl-text-muted mt-2 uppercase tracking-wider font-semibold">16401 · Anvisa</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+        <div class="lg:col-span-5">
+          <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">O que é</div>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] text-gfl-text mb-6">
+            Entenda o<br />
+            <span class="text-gfl-midea">PMOC.</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-7">
+          <p class="text-base md:text-lg text-gfl-text-muted leading-relaxed mb-5">
+            O <strong class="text-gfl-text">Plano de Manutenção, Operação e Controle</strong> é o conjunto de documentos e procedimentos obrigatório para edifícios com ambientes climatizados em uso público ou coletivo.
+          </p>
+          <p class="text-base md:text-lg text-gfl-text-muted leading-relaxed mb-5">
+            Instituído pela <strong class="text-gfl-text">Lei Federal 13.589/2018</strong>, regulamentado pela <strong class="text-gfl-text">Anvisa (Resolução RE-09/2003)</strong> e parametrizado pela <strong class="text-gfl-text">ABNT NBR 16401</strong>.
+          </p>
+          <p class="text-base md:text-lg text-gfl-text-muted leading-relaxed">
+            Garante qualidade do ar interior, previne síndromes respiratórias dos ocupantes e protege a empresa de multas e responsabilização civil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg-soft">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12 md:mb-16">
+        <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">Quem é obrigado</div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gfl-text tracking-tight leading-[1.05]">
+          Sua empresa é<br />
+          <span class="text-gfl-midea">obrigada a ter PMOC?</span>
+        </h2>
+        <p class="text-gfl-text-muted text-base md:text-lg mt-5 max-w-2xl mx-auto">
+          Se enquadra em qualquer um destes casos abaixo, sim — e a multa por não cumprir pode chegar a R$ 1.500.000.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <div data-reveal data-delay="100" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-4 group-hover:bg-gfl-midea transition-colors">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M19 22H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2z"></path>
+              <path d="M9 22v-4h6v4"></path>
+              <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gfl-text mb-2">Edifícios de uso público</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">Hospitais, clínicas, escolas, repartições públicas, shoppings, aeroportos, terminais.</p>
+        </div>
+
+        <div data-reveal data-delay="200" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-4 group-hover:bg-gfl-midea transition-colors">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M3 9a2 2 0 0 1 .621-1.448l8-7.5a2 2 0 0 1 2.758 0l8 7.5A2 2 0 0 1 23 9v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z"></path>
+              <path d="M9 22V12h6v10"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gfl-text mb-2">Edifícios de uso coletivo</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">Escritórios corporativos, hotéis, pousadas, restaurantes, condomínios comerciais, espaços de eventos.</p>
+        </div>
+
+        <div data-reveal data-delay="300" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-4 group-hover:bg-gfl-midea transition-colors">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M2 20v-7l3-9h14l3 9v7"></path>
+              <path d="M2 13h20"></path>
+              <path d="M6 17h.01M10 17h.01M14 17h.01M18 17h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gfl-text mb-2">Indústrias com ambientes climatizados</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">Plantas industriais com áreas administrativas, salas técnicas, refeitórios ou setores produtivos climatizados.</p>
+        </div>
+
+        <div data-reveal data-delay="400" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea/10 flex items-center justify-center mb-4 group-hover:bg-gfl-midea transition-colors">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-midea group-hover:text-white transition-colors">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gfl-text mb-2">Sistemas centrais e VRF</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">Estabelecimentos com sistemas centrais de climatização, VRF, chillers ou fan-coils, independente do segmento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="relative bg-gradient-to-br from-gfl-warning/10 via-gfl-warning/5 to-transparent rounded-2xl p-8 md:p-12 border-l-4 border-gfl-warning">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="w-14 h-14 rounded-xl bg-gfl-warning/20 flex items-center justify-center shrink-0">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gfl-warning">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+              <path d="M12 9v4"></path>
+              <path d="M12 17h.01"></path>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-xs font-bold text-gfl-warning tracking-widest uppercase mb-2">Atenção · Multas e responsabilidade civil</div>
+            <h3 class="text-2xl md:text-3xl font-bold text-gfl-text tracking-tight mb-4">Multas podem chegar a R$ 1.500.000</h3>
+            <p class="text-base text-gfl-text-muted leading-relaxed mb-3">
+              Conforme <strong class="text-gfl-text">Lei 6.437/77 (Infração Sanitária)</strong>, o descumprimento do PMOC gera multa proporcional ao grau da infração, podendo chegar a <strong class="text-gfl-text">R$ 1.500.000</strong>.
+            </p>
+            <p class="text-base text-gfl-text-muted leading-relaxed">
+              Além disso, em caso de problemas de saúde dos ocupantes (Síndrome do Edifício Doente), a empresa responde civilmente por danos individuais e coletivos — somando processos trabalhistas, ações de consumidor e, em casos extremos, ação penal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg-soft">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12 md:mb-16">
+        <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">Como executamos</div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gfl-text tracking-tight leading-[1.05]">
+          PMOC em <span class="text-gfl-midea">5 etapas claras</span>
+        </h2>
+        <p class="text-gfl-text-muted text-base md:text-lg mt-5 max-w-2xl mx-auto">
+          Da visita técnica gratuita à renovação anual — tudo documentado e em conformidade com Anvisa.
+        </p>
+      </div>
+
+      <div class="space-y-4 md:space-y-5">
+        <div data-reveal data-delay="100" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all flex items-start gap-5">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea text-white flex items-center justify-center shrink-0 font-bold text-lg">1</div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-gfl-text mb-1">Diagnóstico inicial</h3>
+            <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed">Visita técnica gratuita à sua empresa, inventário completo dos equipamentos, análise do ambiente e levantamento de não-conformidades.</p>
+          </div>
+        </div>
+
+        <div data-reveal data-delay="200" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all flex items-start gap-5">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea text-white flex items-center justify-center shrink-0 font-bold text-lg">2</div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-gfl-text mb-1">Projeto PMOC</h3>
+            <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed">Elaboração do plano completo por Responsável Técnico registrado (engenheiro mecânico), cronograma de manutenções e documentação para Anvisa.</p>
+          </div>
+        </div>
+
+        <div data-reveal data-delay="300" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all flex items-start gap-5">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea text-white flex items-center justify-center shrink-0 font-bold text-lg">3</div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-gfl-text mb-1">Execução das manutenções</h3>
+            <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed">Manutenções preventivas conforme cronograma, com peças originais Midea/Carrier e técnicos certificados pelas fabricantes.</p>
+          </div>
+        </div>
+
+        <div data-reveal data-delay="400" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all flex items-start gap-5">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea text-white flex items-center justify-center shrink-0 font-bold text-lg">4</div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-gfl-text mb-1">Relatórios e laudos</h3>
+            <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed">Documentação completa de cada serviço executado, laudos técnicos e relatórios prontos para apresentação à Anvisa em qualquer fiscalização.</p>
+          </div>
+        </div>
+
+        <div data-reveal data-delay="500" class="group bg-white rounded-2xl p-6 md:p-7 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-xl transition-all flex items-start gap-5">
+          <div class="w-12 h-12 rounded-xl bg-gfl-midea text-white flex items-center justify-center shrink-0 font-bold text-lg">5</div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-bold text-gfl-text mb-1">Renovação anual</h3>
+            <p class="text-sm md:text-base text-gfl-text-muted leading-relaxed">Revisão do plano e emissão de ART (Anotação de Responsabilidade Técnica) do RT a cada ciclo, mantendo a empresa sempre em conformidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-10 md:mb-14">
+        <div class="text-xs text-gfl-midea font-bold tracking-widest mb-3 uppercase">Quanto custa</div>
+        <h2 class="text-4xl md:text-5xl font-bold text-gfl-text tracking-tight leading-[1.05]">
+          O que influencia o<br />
+          <span class="text-gfl-midea">valor do seu PMOC?</span>
+        </h2>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-gfl-border-soft p-8 md:p-10">
+        <p class="text-base md:text-lg text-gfl-text-muted leading-relaxed mb-6">
+          PMOC não é serviço de prateleira. O valor é calculado a partir do levantamento técnico real da sua empresa. Quatro fatores principais determinam o investimento:
+        </p>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+            </div>
+            <div>
+              <strong class="text-gfl-text">Quantidade e tipo de equipamentos:</strong>
+              <span class="text-gfl-text-muted"> splits, VRF, chillers, fan-coils — cada tipo tem complexidade técnica diferente.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+            </div>
+            <div>
+              <strong class="text-gfl-text">Frequência das manutenções:</strong>
+              <span class="text-gfl-text-muted"> mensal, trimestral, semestral. Setores críticos (hospital, indústria farma) exigem frequência maior.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+            </div>
+            <div>
+              <strong class="text-gfl-text">Localização:</strong>
+              <span class="text-gfl-text-muted"> atendemos todo Vale do Paraíba e Região de Campinas. Distância da sede impacta logística.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-gfl-midea/10 text-gfl-midea flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+            </div>
+            <div>
+              <strong class="text-gfl-text">Escopo:</strong>
+              <span class="text-gfl-text-muted"> PMOC básico (documentação + manutenções) ou PMOC completo (com termografia, análise de eficiência, plano de substituição).</span>
+            </div>
+          </li>
+        </ul>
+        <div class="pt-6 border-t border-gfl-border-soft">
+          <p class="text-sm text-gfl-text-muted mb-4">
+            Diagnóstico inicial é <strong class="text-gfl-text">gratuito</strong>. Você recebe orçamento personalizado em até 24h úteis após a visita técnica.
+          </p>
+          <a href={whatsappLink('Olá, vim do site GFL e quero solicitar um diagnóstico gratuito de PMOC para minha empresa.')} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-gfl-midea hover:bg-gfl-midea-hover text-white px-6 py-3.5 rounded-xl font-bold text-base transition-all hover:shadow-xl hover:shadow-gfl-midea/30">
+            Solicitar diagnóstico gratuito
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="py-20 md:py-28 bg-gfl-carrier relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/20 to-transparent"></div>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-gfl-midea/30 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6 max-w-3xl mx-auto" style="color: white;">
+        Pronto para deixar sua<br />
+        <span style="color: #0099DA;">empresa em conformidade?</span>
+      </h2>
+      <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: rgba(255,255,255,0.85);">
+        Diagnóstico técnico em até 24h. Atendemos {totalCidades}+ cidades no Vale do Paraíba e Região de Campinas.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href={whatsappLink('Olá, vim do site GFL e quero contratar PMOC para minha empresa.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+          Contratar PMOC agora
+        </a>
+        <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
+          Outras formas de contato
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
