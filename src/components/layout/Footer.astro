@@ -74,14 +74,19 @@ import { empresa } from '../../lib/empresa';
     </div>
 
     <div
-      class="border-t border-gfl-border-soft mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3"
+      class="border-t border-gfl-border-soft mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center gap-3 text-center md:text-left"
     >
       <span class="text-xs text-gfl-text-muted">
         © 2026 {empresa.razaoSocial}
       </span>
-      <span class="text-xs text-gfl-text-muted">
-        Em conformidade com a LGPD · Lei 13.709/2018
-      </span>
+      <div class="flex flex-col md:items-end gap-1">
+        <span class="text-xs text-gfl-text-muted">
+          Políticas atualizadas em <strong class="text-gfl-text">1º de junho de 2026</strong> · Versão 1.0
+        </span>
+        <span class="text-xs text-gfl-text-muted">
+          Em conformidade com a LGPD · Lei 13.709/2018
+        </span>
+      </div>
     </div>
   </div>
 </footer>
