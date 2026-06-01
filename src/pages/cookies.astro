@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa } from '../lib/empresa';
+---
+
+<BaseLayout
+  title="Política de Cookies — GFL Service & Repair"
+  description="Como utilizamos cookies e tecnologias similares no site da GFL Service & Repair."
+>
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"></div>
+      <div class="absolute top-10 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-10 w-72 h-72 bg-gfl-midea/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase" style="color: white;">
+          <span class="w-1.5 h-1.5 bg-gfl-midea rounded-full animate-pulse"></span>
+          Documento Legal · Cookies
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.0] mb-6" style="color: white;">
+          Política de Cookies
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl mb-6" style="color: rgba(255,255,255,0.85);">
+          Como utilizamos cookies e tecnologias similares no site da GFL.
+        </p>
+        <p class="text-sm font-semibold tracking-wide" style="color: rgba(255,255,255,0.65);">
+          Última atualização: 17 de maio de 2026 · Versão 1.0
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <article class="max-w-4xl mx-auto text-gfl-text-muted leading-relaxed">
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-0 mb-4">1. O que são cookies</h2>
+        <p class="mb-4">
+          Cookies são pequenos arquivos de texto armazenados no seu navegador ao acessar sites. Permitem reconhecer seu dispositivo, lembrar preferências, analisar uso e oferecer experiência personalizada. Podem ser de “primeira parte” (criados pela GFL) ou “terceira parte” (criados por parceiros como Google ou Meta).
+        </p>
+
+        <div class="bg-gfl-bg-soft border-l-4 border-gfl-midea p-4 my-6 rounded-r-lg">
+          <p class="text-sm text-gfl-text-muted leading-relaxed">
+            <strong class="text-gfl-text">Nota:</strong> esta política aplica-se ao site <strong>gflservice.com.br</strong>. Comunicações por e-mail são enviadas pelo domínio <strong>gflrefrigeracao.com.br</strong>, também de titularidade da GFL.
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">2. Por que usamos cookies</h2>
+        <p class="mb-4">Utilizamos cookies para:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Garantir o funcionamento técnico básico do site</li>
+          <li>Lembrar suas preferências (idioma, banner de cookies aceito)</li>
+          <li>Medir audiência e melhorar conteúdo (análise estatística)</li>
+          <li>Personalizar anúncios e medir efetividade de campanhas publicitárias</li>
+          <li>Prevenir fraudes e ataques de segurança</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">3. Tipos de cookies que utilizamos</h2>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">3.1. Cookies essenciais (sempre ativos)</h3>
+        <p class="mb-4">Necessários ao funcionamento do site. Não podem ser desativados sem comprometer a navegação.</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Cookie de sessão do servidor — duração: sessão (deletado ao fechar navegador)</li>
+          <li>Cookie de consentimento de cookies — duração: 6 meses</li>
+          <li>Cookies de segurança e prevenção de fraudes — duração: 24h a 30 dias</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">3.2. Cookies analíticos (mediante consentimento)</h3>
+        <p class="mb-4">Coletam informações agregadas e anonimizadas sobre uso do site.</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Google Analytics (_ga, _gid, _gat) — duração: 24 meses, mede tráfego, comportamento, origem</li>
+          <li>Microsoft Clarity (se ativo) — duração: 12 meses, mapas de calor e gravações anônimas</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">3.3. Cookies publicitários (mediante consentimento)</h3>
+        <p class="mb-4">Permitem mensurar campanhas e exibir anúncios relevantes em outros sites.</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Meta Pixel (Facebook/Instagram) — duração: 90 dias, mede conversões e otimiza Ads</li>
+          <li>Google Ads — duração: 90 dias, mede conversões e otimiza Ads</li>
+          <li>LinkedIn Insight Tag (se ativo) — duração: 90 dias</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">3.4. Cookies de funcionalidade (mediante consentimento)</h3>
+        <p class="mb-4">Lembram suas escolhas para melhorar a experiência.</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Preferências de exibição — duração: 12 meses</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">4. Como gerenciar cookies</h2>
+        <p class="mb-4">Você pode gerenciar cookies de várias formas:</p>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">4.1. No banner do site</h3>
+        <p class="mb-4">
+          Ao primeiro acesso, oferecemos painel para aceitar todos, recusar não essenciais ou personalizar. A escolha pode ser revisada a qualquer momento clicando em “Configurações de Cookies” no rodapé.
+        </p>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">4.2. Nas configurações do navegador</h3>
+        <p class="mb-4">
+          Todos os navegadores modernos permitem bloquear, deletar ou restringir cookies. Consulte:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Chrome: chrome://settings/cookies</li>
+          <li>Firefox: about:preferences#privacy</li>
+          <li>Safari: Preferências &gt; Privacidade</li>
+          <li>Edge: edge://settings/content/cookies</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">4.3. Em ferramentas de terceiros</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Google Analytics opt-out: tools.google.com/dlpage/gaoptout</li>
+          <li>Configuração de anúncios Google: adssettings.google.com</li>
+          <li>Configuração de anúncios Meta: facebook.com/adpreferences</li>
+        </ul>
+        <p class="mb-4">
+          <strong class="text-gfl-text">Importante:</strong> desativar cookies essenciais pode comprometer funcionalidades básicas. Desativar cookies analíticos e publicitários não impede o uso do site, mas pode reduzir a personalização.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">5. Cookies de terceiros</h2>
+        <p class="mb-4">
+          Não temos controle sobre cookies definidos por terceiros (Google, Meta). Recomendamos consultar as políticas de privacidade desses provedores:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Google: policies.google.com/privacy</li>
+          <li>Meta: facebook.com/policy.php</li>
+          <li>Microsoft: privacy.microsoft.com</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">6. Cookies e dados pessoais</h2>
+        <p class="mb-4">
+          Alguns cookies podem coletar dados pessoais (como IP). Nesses casos, o tratamento segue nossa <a href="/privacidade" class="text-gfl-midea hover:underline">Política de Privacidade</a> e a LGPD.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">7. Alterações nesta Política</h2>
+        <p class="mb-4">
+          Esta Política de Cookies pode ser atualizada periodicamente. A versão vigente estará sempre em gflservice.com.br/cookies com data e versão.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">8. Contato</h2>
+        <p class="mb-4">
+          Dúvidas sobre cookies: <a href={`mailto:${empresa.contato.email}`} class="text-gfl-midea hover:underline">{empresa.contato.email}</a>
+        </p>
+
+      </article>
+    </div>
+  </section>
+</BaseLayout>

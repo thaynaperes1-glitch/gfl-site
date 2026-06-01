@@ -1,40 +1,231 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { empresa } from '../lib/empresa';
+
+const enderecoLinha = `${empresa.endereco.rua}, ${empresa.endereco.numero} — ${empresa.endereco.bairro}, ${empresa.endereco.cidade}/${empresa.endereco.uf}, CEP ${empresa.endereco.cep}`;
 ---
 
 <BaseLayout
   title="Política de Privacidade — GFL Service & Repair"
-  description="Política de privacidade e tratamento de dados pessoais da GFL Service & Repair conforme LGPD."
+  description="Como a GFL Service & Repair coleta, usa e protege seus dados pessoais, em conformidade com a LGPD (Lei 13.709/2018)."
 >
-  <section class="py-16 bg-gfl-bg">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h1 class="text-3xl md:text-4xl font-bold text-gfl-text mb-6">Política de Privacidade</h1>
-      <p class="text-gfl-text-muted mb-4">Última atualização: 16 de maio de 2026</p>
-      <p class="text-gfl-text-muted leading-relaxed mb-4">
-        A {empresa.razaoSocial}, CNPJ {empresa.cnpj}, respeita a privacidade dos visitantes do
-        nosso site e cumpre integralmente a Lei Geral de Proteção de Dados (Lei 13.709/2018 —
-        LGPD).
-      </p>
-      <h2 class="text-xl font-bold text-gfl-text mb-3 mt-8">Dados coletados</h2>
-      <p class="text-gfl-text-muted leading-relaxed mb-4">
-        Coletamos dados pessoais (nome, e-mail, telefone) apenas quando você os fornece
-        voluntariamente em formulários de contato ou orçamento. Não rastreamos comportamento
-        individual além do necessário para análise estatística agregada (Google Analytics).
-      </p>
-      <h2 class="text-xl font-bold text-gfl-text mb-3 mt-8">Finalidade do tratamento</h2>
-      <p class="text-gfl-text-muted leading-relaxed mb-4">
-        Seus dados são utilizados exclusivamente para: responder à sua solicitação de contato,
-        elaborar orçamento, agendar visita técnica e prestar o serviço contratado.
-      </p>
-      <h2 class="text-xl font-bold text-gfl-text mb-3 mt-8">Seus direitos</h2>
-      <p class="text-gfl-text-muted leading-relaxed mb-4">
-        Você tem direito de acesso, correção, exclusão, portabilidade e revogação de consentimento
-        sobre seus dados a qualquer momento. Solicitações via e-mail:
-        <a href={`mailto:${empresa.contato.email}`} class="text-gfl-midea">
-          {empresa.contato.email}
-        </a>.
-      </p>
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"></div>
+      <div class="absolute top-10 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-10 w-72 h-72 bg-gfl-midea/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase" style="color: white;">
+          <span class="w-1.5 h-1.5 bg-gfl-midea rounded-full animate-pulse"></span>
+          Documento Legal · LGPD
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.0] mb-6" style="color: white;">
+          Política de Privacidade
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl mb-6" style="color: rgba(255,255,255,0.85);">
+          Como a GFL Service &amp; Repair coleta, usa e protege seus dados pessoais.
+        </p>
+        <p class="text-sm font-semibold tracking-wide" style="color: rgba(255,255,255,0.65);">
+          Última atualização: 17 de maio de 2026 · Versão 1.0
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <article class="max-w-4xl mx-auto text-gfl-text-muted leading-relaxed">
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-0 mb-4">1. Quem somos e responsável pelo tratamento</h2>
+        <p class="mb-4">
+          A {empresa.razaoSocial}, inscrita no CNPJ sob nº {empresa.cnpj}, com sede em {empresa.endereco.rua}, {empresa.endereco.numero} — {empresa.endereco.bairro}, {empresa.endereco.cidade}/{empresa.endereco.uf}, CEP {empresa.endereco.cep} (“GFL”, “nós”, “empresa”), é a controladora dos dados pessoais tratados por meio deste site (gflservice.com.br), de nossos canais de WhatsApp, Instagram, Facebook e durante a execução dos serviços contratados.
+        </p>
+        <p class="mb-4">
+          Esta Política de Privacidade descreve, de forma clara e transparente, como coletamos, utilizamos, armazenamos, compartilhamos e protegemos os dados pessoais de clientes, prospectos, visitantes do site e demais titulares, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD), o Marco Civil da Internet (Lei nº 12.965/2014) e demais legislações aplicáveis.
+        </p>
+
+        <div class="bg-gfl-bg-soft border-l-4 border-gfl-midea p-4 my-6 rounded-r-lg">
+          <p class="text-sm text-gfl-text-muted leading-relaxed">
+            <strong class="text-gfl-text">Sobre nossos domínios:</strong> a GFL utiliza dois domínios institucionais, ambos de nossa titularidade e operados pela mesma pessoa jurídica:
+            <br />• <strong>gflservice.com.br</strong> — site institucional (este endereço)
+            <br />• <strong>gflrefrigeracao.com.br</strong> — domínio histórico utilizado para e-mails corporativos (ex.: {empresa.contato.email})
+            <br /><br />
+            Toda comunicação enviada ou recebida em qualquer dos domínios é oficial e segue os mesmos critérios desta Política.
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">2. Encarregada de Proteção de Dados (DPO)</h2>
+        <p class="mb-4">
+          Em atendimento ao Art. 41 da LGPD, designamos como Encarregada pelo Tratamento de Dados Pessoais:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Nome: Thayna Peres</li>
+          <li>Cargo: Proprietária e Gerente</li>
+          <li>Canal de contato: <a href={`mailto:${empresa.contato.email}`} class="text-gfl-midea hover:underline">{empresa.contato.email}</a></li>
+          <li>Endereço para correspondência: {enderecoLinha}</li>
+        </ul>
+        <p class="mb-4">
+          A Encarregada é responsável por receber comunicações de titulares de dados, da Autoridade Nacional de Proteção de Dados (ANPD) e orientar internamente sobre as práticas adotadas pela GFL.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">3. Dados pessoais que coletamos</h2>
+        <p class="mb-4">Coletamos dados pessoais nas seguintes situações:</p>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">3.1. Dados fornecidos diretamente por você</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Nome completo, telefone, e-mail e mensagem ao preencher formulários de contato ou orçamento no site</li>
+          <li>Endereço completo (rua, número, complemento, bairro, cidade, CEP) ao solicitar visita técnica ou orçamento</li>
+          <li>Dados do equipamento (marca, modelo, capacidade, número de série) durante atendimento técnico</li>
+          <li>Informações de pagamento (forma de pagamento, comprovantes), quando aplicável — não armazenamos dados completos de cartão de crédito</li>
+          <li>CPF ou CNPJ, quando necessário para emissão de Nota Fiscal de Serviço (NFS-e)</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">3.2. Dados coletados automaticamente</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Endereço IP do dispositivo de acesso</li>
+          <li>Tipo de navegador, sistema operacional, idioma e fuso horário</li>
+          <li>Páginas visitadas, tempo de permanência, origem do tráfego (referrer)</li>
+          <li>Cookies e identificadores publicitários (consulte a <a href="/cookies" class="text-gfl-midea hover:underline">Política de Cookies</a>)</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gfl-text mt-6 mb-3">3.3. Dados recebidos de terceiros</h3>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Informações de contato fornecidas pela Midea, Carrier ou Blue Service quando você aciona a garantia diretamente com o fabricante e somos acionados como Centro de Serviços Autorizado</li>
+          <li>Dados de campanhas publicitárias na Meta (Facebook, Instagram, WhatsApp) e Google Ads, conforme suas interações com nossos anúncios</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">4. Finalidades do tratamento</h2>
+        <p class="mb-4">Tratamos seus dados pessoais para:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Responder solicitações de contato, orçamento ou agendamento de visita técnica</li>
+          <li>Elaborar orçamentos, ordens de serviço e propostas comerciais</li>
+          <li>Executar os serviços contratados (manutenção preventiva, corretiva, instalação, PMOC, higienização)</li>
+          <li>Acionar garantias junto à Midea, Carrier e Blue Service quando aplicável</li>
+          <li>Emitir notas fiscais, recibos e cumprir obrigações fiscais e tributárias</li>
+          <li>Comunicar atualizações sobre o serviço, agendamentos, alterações e conclusão de atendimento</li>
+          <li>Enviar comunicações de marketing (apenas com consentimento prévio e revogável a qualquer momento)</li>
+          <li>Cumprir obrigações legais, regulatórias ou determinações de autoridades competentes</li>
+          <li>Defender direitos da GFL em processos administrativos ou judiciais</li>
+          <li>Analisar uso do site para melhorar nossa presença digital e segurança (dados agregados)</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">5. Bases legais utilizadas (LGPD, Art. 7º e 11)</h2>
+        <p class="mb-4">
+          Cada tratamento de dados realizado pela GFL é fundamentado em pelo menos uma das seguintes bases legais previstas na LGPD:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li><strong class="text-gfl-text">Execução de contrato ou procedimentos preliminares (Art. 7º, V):</strong> quando você solicita orçamento, contrata serviço ou recebe atendimento técnico</li>
+          <li><strong class="text-gfl-text">Cumprimento de obrigação legal ou regulatória (Art. 7º, II):</strong> para emissão de NFS-e, cumprimento de normas trabalhistas, fiscais e ambientais (Lei 13.589/2018 — PMOC)</li>
+          <li><strong class="text-gfl-text">Legítimo interesse (Art. 7º, IX):</strong> para prevenção de fraudes, segurança da informação, análises estatísticas agregadas e melhoria contínua dos serviços</li>
+          <li><strong class="text-gfl-text">Consentimento (Art. 7º, I):</strong> para envio de comunicações de marketing e uso de cookies não essenciais</li>
+          <li><strong class="text-gfl-text">Exercício regular de direitos em processo (Art. 7º, VI):</strong> quando necessário para defesa em processos administrativos ou judiciais</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">6. Compartilhamento de dados com terceiros</h2>
+        <p class="mb-4">
+          Não vendemos seus dados pessoais. Compartilhamos apenas com terceiros essenciais à prestação dos serviços, sempre por meio de contrato com cláusulas de proteção e dever de sigilo:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li><strong class="text-gfl-text">Midea, Carrier e Blue Service:</strong> para acionamento de garantia, aprovação de atendimentos e comunicações relacionadas à autorização de serviço</li>
+          <li><strong class="text-gfl-text">Empresas de tecnologia (operadores de dados):</strong> Hostinger (hospedagem), Google (Workspace, Analytics, Ads), Meta (Facebook, Instagram, WhatsApp Business), OpenRouter (suporte técnico via IA), conforme cada serviço utilizado</li>
+          <li><strong class="text-gfl-text">Contabilidade:</strong> para emissão de notas fiscais e cumprimento de obrigações fiscais</li>
+          <li><strong class="text-gfl-text">Operadoras de pagamento:</strong> quando aplicável, para processamento de transações</li>
+          <li><strong class="text-gfl-text">Autoridades públicas:</strong> mediante requisição legal, judicial ou administrativa (Polícia, Receita Federal, ANPD, etc.)</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">7. Transferência internacional de dados</h2>
+        <p class="mb-4">
+          Alguns dos nossos operadores (Google, Meta, OpenRouter, Hostinger) podem processar dados em servidores localizados fora do Brasil, especialmente nos Estados Unidos. Nesses casos, garantimos que a transferência observa os requisitos da LGPD (Art. 33), incluindo: (i) adequação do país, (ii) cláusulas contratuais padrão, (iii) certificações como Privacy Shield/DPF, ou (iv) consentimento específico do titular quando aplicável.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">8. Tempo de retenção dos dados</h2>
+        <p class="mb-4">
+          Mantemos seus dados apenas pelo tempo necessário ao cumprimento das finalidades para as quais foram coletados:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li><strong class="text-gfl-text">Dados de orçamentos não convertidos:</strong> 24 meses, para eventual retomada de contato</li>
+          <li><strong class="text-gfl-text">Dados de clientes ativos:</strong> durante toda a relação contratual e por 5 anos após o último atendimento (prazo do Código de Defesa do Consumidor)</li>
+          <li><strong class="text-gfl-text">Dados fiscais (notas fiscais, comprovantes):</strong> 5 anos (Decreto-lei nº 486/1969 e CTN)</li>
+          <li><strong class="text-gfl-text">Dados trabalhistas e contratuais:</strong> conforme prazos da CLT (até 30 anos para FGTS)</li>
+          <li><strong class="text-gfl-text">Cookies:</strong> prazo definido na Política de Cookies (de 7 dias a 24 meses)</li>
+          <li><strong class="text-gfl-text">Comunicações de marketing:</strong> até a revogação do consentimento</li>
+        </ul>
+        <p class="mb-4">Após esses prazos, os dados são anonimizados ou eliminados de forma segura.</p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">9. Seus direitos como titular (LGPD, Art. 18)</h2>
+        <p class="mb-4">Você pode exercer, a qualquer momento e gratuitamente, os seguintes direitos:</p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Confirmação de existência de tratamento de seus dados</li>
+          <li>Acesso aos dados que mantemos sobre você</li>
+          <li>Correção de dados incompletos, inexatos ou desatualizados</li>
+          <li>Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD</li>
+          <li>Portabilidade dos dados para outro fornecedor de serviço</li>
+          <li>Eliminação dos dados pessoais tratados com base no consentimento</li>
+          <li>Informação sobre as entidades públicas e privadas com as quais compartilhamos seus dados</li>
+          <li>Informação sobre a possibilidade de não fornecer consentimento e as consequências da negativa</li>
+          <li>Revogação do consentimento a qualquer momento</li>
+          <li>Oposição a tratamento realizado com fundamento em uma das hipóteses dispensadas de consentimento, quando houver descumprimento da LGPD</li>
+          <li>Revisão de decisões automatizadas que afetem seus interesses</li>
+        </ul>
+        <p class="mb-4">
+          Para exercer seus direitos, envie e-mail para <a href={`mailto:${empresa.contato.email}`} class="text-gfl-midea hover:underline">{empresa.contato.email}</a> com o assunto “LGPD — Solicitação de Titular” informando: nome completo, CPF/CNPJ, direito que deseja exercer e detalhes da solicitação. Responderemos no prazo de até 15 dias.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">10. Segurança da informação</h2>
+        <p class="mb-4">
+          Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição, incluindo:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Conexão segura HTTPS/TLS em todo o site</li>
+          <li>Armazenamento em servidores com controle de acesso e backup regular</li>
+          <li>Senhas criptografadas e autenticação de múltiplos fatores quando aplicável</li>
+          <li>Acesso restrito aos dados apenas aos colaboradores autorizados, com termos de confidencialidade assinados</li>
+          <li>Monitoramento contínuo de segurança e atualizações periódicas dos sistemas</li>
+          <li>Plano de resposta a incidentes, com comunicação à ANPD e aos titulares afetados em até 72h, conforme Art. 48 da LGPD</li>
+        </ul>
+        <p class="mb-4">
+          Apesar de todas as medidas adotadas, nenhum sistema é 100% imune. Em caso de incidente de segurança envolvendo seus dados, notificaremos você e a ANPD nos prazos legais.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">11. Cookies e tecnologias similares</h2>
+        <p class="mb-4">
+          Usamos cookies essenciais (necessários ao funcionamento do site) e cookies analíticos/publicitários (mediante consentimento). Detalhes completos sobre tipos, finalidades, prazos e como gerenciar cookies estão descritos na nossa <a href="/cookies" class="text-gfl-midea hover:underline">Política de Cookies</a>.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">12. Crianças e adolescentes</h2>
+        <p class="mb-4">
+          O site da GFL não é direcionado a menores de 18 anos. Não coletamos intencionalmente dados de crianças ou adolescentes. Caso identifiquemos tratamento indevido, eliminaremos os dados imediatamente. Se você é pai, mãe ou responsável e identifica algum dado de menor sob sua tutela em nossos sistemas, entre em contato com a DPO.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">13. Alterações desta Política</h2>
+        <p class="mb-4">
+          Esta Política pode ser atualizada periodicamente para refletir mudanças em nossas práticas, na legislação ou em recomendações da ANPD. A versão vigente estará sempre disponível em gflservice.com.br/privacidade com data e número da versão. Recomendamos revisão periódica. Alterações materiais serão comunicadas com 30 dias de antecedência por e-mail (quando aplicável) ou aviso em destaque no site.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">14. Legislação aplicável e foro</h2>
+        <p class="mb-4">
+          Esta Política é regida pela legislação brasileira, em especial pela LGPD, Marco Civil da Internet e Código de Defesa do Consumidor. Fica eleito o foro da Comarca de São José dos Campos/SP para dirimir quaisquer controvérsias, salvo competência absoluta diversa.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">15. Contato</h2>
+        <p class="mb-4">
+          Para dúvidas, solicitações ou reclamações sobre esta Política ou tratamento de dados:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li><strong class="text-gfl-text">E-mail (DPO):</strong> <a href={`mailto:${empresa.contato.email}`} class="text-gfl-midea hover:underline">{empresa.contato.email}</a></li>
+          <li><strong class="text-gfl-text">Telefone:</strong> {empresa.contato.telefone}</li>
+          <li><strong class="text-gfl-text">Endereço:</strong> {empresa.endereco.rua}, {empresa.endereco.numero} — {empresa.endereco.bairro}, {empresa.endereco.cidade}/{empresa.endereco.uf}</li>
+        </ul>
+        <p class="mb-4">
+          Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD) por meio do site gov.br/anpd.
+        </p>
+
+      </article>
     </div>
   </section>
 </BaseLayout>

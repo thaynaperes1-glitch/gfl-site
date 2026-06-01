@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { empresa } from '../lib/empresa';
+---
+
+<BaseLayout
+  title="Termos de Uso — GFL Service & Repair"
+  description="Condições de utilização do site e dos serviços da GFL Service & Repair."
+>
+  <!-- Hero -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-gfl-carrier">
+    <div class="absolute inset-0 -z-0">
+      <div class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-gfl-midea/30 to-transparent"></div>
+      <div class="absolute top-10 right-20 w-96 h-96 bg-gfl-midea/40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-10 w-72 h-72 bg-gfl-midea/15 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur border border-white/20 rounded-full text-xs font-semibold tracking-wider mb-6 uppercase" style="color: white;">
+          <span class="w-1.5 h-1.5 bg-gfl-midea rounded-full animate-pulse"></span>
+          Documento Legal · Termos de Uso
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.0] mb-6" style="color: white;">
+          Termos de Uso
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl mb-6" style="color: rgba(255,255,255,0.85);">
+          Condições de utilização do site e dos serviços da GFL Service &amp; Repair.
+        </p>
+        <p class="text-sm font-semibold tracking-wide" style="color: rgba(255,255,255,0.65);">
+          Última atualização: 17 de maio de 2026 · Versão 1.0
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <section class="py-16 md:py-24 bg-gfl-bg">
+    <div class="container mx-auto px-4">
+      <article class="max-w-4xl mx-auto text-gfl-text-muted leading-relaxed">
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-0 mb-4">1. Aceitação dos Termos</h2>
+        <p class="mb-4">
+          Ao acessar e utilizar o site gflservice.com.br e os serviços oferecidos pela {empresa.razaoSocial}, CNPJ {empresa.cnpj} (“GFL”), você concorda expressamente com estes Termos de Uso e com nossa <a href="/privacidade" class="text-gfl-midea hover:underline">Política de Privacidade</a>. Se não concorda, por favor, não utilize o site.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">2. Quem somos</h2>
+        <p class="mb-4">
+          A GFL é Centro de Serviços Autorizado Midea (Blue Service) e Carrier, especializada em manutenção preventiva e corretiva, instalação, PMOC (Plano de Manutenção, Operação e Controle), higienização técnica e atendimento em garantia de equipamentos HVAC (Heating, Ventilation and Air Conditioning) em todo o Vale do Paraíba e Região de Campinas.
+        </p>
+
+        <div class="bg-gfl-bg-soft border-l-4 border-gfl-midea p-4 my-6 rounded-r-lg">
+          <p class="text-sm text-gfl-text-muted leading-relaxed">
+            <strong class="text-gfl-text">Sobre nossos domínios:</strong> a GFL utiliza dois domínios institucionais, ambos de nossa titularidade e operados pela mesma pessoa jurídica:
+            <br />• <strong>gflservice.com.br</strong> — site institucional (este endereço)
+            <br />• <strong>gflrefrigeracao.com.br</strong> — domínio histórico utilizado para e-mails corporativos (ex.: {empresa.contato.email})
+            <br /><br />
+            Toda comunicação enviada ou recebida em qualquer dos domínios é oficial e segue os mesmos critérios destes Termos.
+          </p>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">3. Capacidade legal</h2>
+        <p class="mb-4">
+          O uso dos serviços está restrito a pessoas físicas maiores de 18 anos plenamente capazes ou pessoas jurídicas regularmente constituídas. Ao contratar, você declara estar apto a celebrar negócios jurídicos.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">4. Serviços oferecidos</h2>
+        <p class="mb-4">
+          A GFL oferece, entre outros: manutenção corretiva, preventiva e preditiva de equipamentos HVAC, elaboração e execução de PMOC conforme Lei 13.589/2018, instalação autorizada de equipamentos Midea e Carrier, higienização técnica de splits e centrais, atendimento em garantia oficial Midea Blue Service e Carrier, laudos técnicos e emissão de ART quando aplicável.
+        </p>
+        <p class="mb-4">
+          A descrição detalhada de cada serviço está disponível em nossas páginas <a href="/servicos" class="text-gfl-midea hover:underline">/servicos</a> e <a href="/pmoc" class="text-gfl-midea hover:underline">/pmoc</a>.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">5. Cadastro e responsabilidade do usuário</h2>
+        <p class="mb-4">
+          Ao fornecer informações através de formulários, WhatsApp ou outros canais, você se compromete a: (i) fornecer informações verdadeiras, completas e atualizadas; (ii) manter sigilo das informações de acesso (quando aplicável); (iii) comunicar imediatamente qualquer uso não autorizado de seus dados; (iv) responsabilizar-se por todo o conteúdo enviado.
+        </p>
+        <p class="mb-4">
+          A GFL reserva-se o direito de recusar atendimento em caso de informações falsas ou comportamento inadequado.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">6. Orçamentos e contratação</h2>
+        <p class="mb-4">
+          Orçamentos enviados pela GFL têm validade de 15 dias corridos, salvo indicação expressa em contrário. A contratação de qualquer serviço será formalizada por meio de Ordem de Serviço (OS), proposta comercial assinada ou aceite expresso por canal oficial (WhatsApp, e-mail).
+        </p>
+        <p class="mb-4">
+          Os valores podem variar conforme: condições do equipamento, peças necessárias, deslocamento, urgência, complexidade técnica e disponibilidade de agenda.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">7. Pagamento</h2>
+        <p class="mb-4">
+          As condições de pagamento serão definidas em cada Ordem de Serviço. Aceitamos: PIX, transferência bancária, cartão de crédito (à vista ou parcelado, conforme disponibilidade) e boleto bancário para empresas. A emissão de Nota Fiscal de Serviço (NFS-e) é obrigatória em todos os atendimentos.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">8. Garantia dos serviços</h2>
+        <p class="mb-4">
+          A GFL oferece garantia de seus serviços conforme as seguintes condições mínimas, salvo prazos diferenciados acordados em contrato específico:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Mão de obra: 90 dias (CDC, Art. 26)</li>
+          <li>Peças: conforme garantia do fabricante (Midea, Carrier, terceiros)</li>
+          <li>Instalações autorizadas: conforme termos da Midea Blue Service e Carrier</li>
+          <li>Atendimentos em garantia oficial: conforme termos do fabricante</li>
+        </ul>
+        <p class="mb-4">
+          A garantia não cobre: mau uso, instalação incorreta por terceiros, falta de manutenção preventiva, danos por intempéries, alteração não autorizada, uso de peças não originais ou desgaste natural.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">9. Cancelamentos e remarcações</h2>
+        <p class="mb-4">
+          Agendamentos podem ser remarcados sem custo com antecedência mínima de 24h. Cancelamentos no dia do atendimento podem gerar cobrança de visita técnica, conforme valor previamente informado.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">10. Propriedade intelectual</h2>
+        <p class="mb-4">
+          Todo o conteúdo do site (textos, imagens, logos GFL, identidade visual, layout, código-fonte) é de propriedade da GFL ou licenciado, protegido pela Lei 9.610/98 (Direitos Autorais) e Lei 9.279/96 (Propriedade Industrial). É proibida a reprodução, distribuição, modificação ou uso comercial sem autorização prévia e expressa.
+        </p>
+        <p class="mb-4">
+          As marcas Midea®, Blue Service® e Carrier® são propriedade de seus respectivos titulares e são utilizadas pela GFL no exercício regular da autorização concedida como Centro de Serviços Autorizado.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">11. Limitação de responsabilidade</h2>
+        <p class="mb-4">
+          A GFL se responsabiliza pelos serviços efetivamente prestados, conforme registrado em Ordem de Serviço. Não nos responsabilizamos por:
+        </p>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li>Indisponibilidade temporária do site por motivos técnicos, manutenção ou eventos de força maior</li>
+          <li>Conteúdo de sites de terceiros eventualmente linkados</li>
+          <li>Danos indiretos, lucros cessantes ou consequências de uso indevido das informações</li>
+          <li>Atrasos causados por terceiros (fornecedores, transportadoras, fabricantes)</li>
+        </ul>
+        <p class="mb-4">
+          A responsabilidade da GFL, em qualquer caso, limita-se ao valor efetivamente pago pelo serviço contratado, salvo dolo ou culpa grave comprovados judicialmente.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">12. Uso adequado do site</h2>
+        <p class="mb-4">
+          É proibido: (i) usar o site para fins ilícitos; (ii) tentar invadir, sobrecarregar ou comprometer a segurança dos sistemas; (iii) enviar conteúdo ofensivo, fraudulento ou que viole direitos de terceiros; (iv) coletar dados de outros usuários sem autorização; (v) usar bots, scrapers ou ferramentas automatizadas sem permissão.
+        </p>
+        <p class="mb-4">
+          Violações podem resultar em suspensão imediata do acesso e responsabilização civil e criminal.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">13. Comunicações</h2>
+        <p class="mb-4">
+          Ao fornecer e-mail e WhatsApp, você concorda em receber comunicações transacionais (orçamentos, agendamentos, notas fiscais) da GFL. Comunicações de marketing serão enviadas apenas com consentimento prévio e revogável a qualquer momento.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">14. Alterações dos Termos</h2>
+        <p class="mb-4">
+          Estes Termos podem ser atualizados a qualquer momento. A versão vigente estará disponível em gflservice.com.br/termos com data e número da versão. Alterações materiais serão comunicadas com 30 dias de antecedência.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">15. Legislação e foro</h2>
+        <p class="mb-4">
+          Estes Termos são regidos pela legislação brasileira, em especial pelo Código Civil, Código de Defesa do Consumidor e Marco Civil da Internet. Fica eleito o foro da Comarca de São José dos Campos/SP para dirimir controvérsias, salvo competência absoluta diversa.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-gfl-text mt-12 mb-4">16. Contato</h2>
+        <ul class="list-disc pl-6 space-y-2 mb-4">
+          <li><strong class="text-gfl-text">E-mail:</strong> <a href={`mailto:${empresa.contato.email}`} class="text-gfl-midea hover:underline">{empresa.contato.email}</a></li>
+          <li><strong class="text-gfl-text">Telefone:</strong> {empresa.contato.telefone}</li>
+          <li><strong class="text-gfl-text">Endereço:</strong> {empresa.endereco.rua}, {empresa.endereco.numero} — {empresa.endereco.bairro}, {empresa.endereco.cidade}/{empresa.endereco.uf}</li>
+        </ul>
+
+      </article>
+    </div>
+  </section>
+</BaseLayout>

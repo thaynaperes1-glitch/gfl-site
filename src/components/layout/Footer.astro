@@ -4,7 +4,7 @@ import { empresa } from '../../lib/empresa';
 
 <footer class="bg-gfl-bg-soft border-t border-gfl-border-soft mt-16">
   <div class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
       <div>
         <div class="text-2xl font-bold text-gfl-text tracking-tight mb-2">
           GFL <span class="text-gfl-midea">Service</span>
@@ -54,6 +54,23 @@ import { empresa } from '../../lib/empresa';
           CEP {empresa.endereco.cep}
         </p>
       </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-gfl-text mb-3">Legal</h4>
+        <ul class="space-y-2 text-xs text-gfl-text-muted">
+          <li><a href="/privacidade" class="hover:text-gfl-midea">Política de Privacidade</a></li>
+          <li><a href="/termos" class="hover:text-gfl-midea">Termos de Uso</a></li>
+          <li><a href="/cookies" class="hover:text-gfl-midea">Política de Cookies</a></li>
+          <li>
+            <button
+              onclick="window.openCookieSettings()"
+              class="text-gfl-text-muted hover:text-gfl-midea transition cursor-pointer text-left"
+            >
+              Configurações de Cookies
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div
@@ -62,9 +79,9 @@ import { empresa } from '../../lib/empresa';
       <span class="text-xs text-gfl-text-muted">
         © 2026 {empresa.razaoSocial}
       </span>
-      <a href="/privacidade" class="text-xs text-gfl-text-muted hover:text-gfl-midea">
-        Política de Privacidade · LGPD
-      </a>
+      <span class="text-xs text-gfl-text-muted">
+        Em conformidade com a LGPD · Lei 13.709/2018
+      </span>
     </div>
   </div>
 </footer>

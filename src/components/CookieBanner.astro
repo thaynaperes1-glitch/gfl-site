@@ -1,0 +1,208 @@
+---
+// Banner de consentimento de cookies LGPD-compliant.
+// Sem dependências externas — JavaScript vanilla + localStorage.
+---
+
+<!-- Banner inicial -->
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 right-0 z-[100] hidden bg-white border-t border-gfl-border shadow-2xl p-6 md:p-8"
+>
+  <div class="container mx-auto px-0 md:px-4 flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
+    <p class="text-sm text-gfl-text-muted leading-relaxed flex-1">
+      🍪 Usamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo.
+      Cookies essenciais são sempre ativos. Leia nossa
+      <a href="/cookies" class="text-gfl-midea hover:underline">Política de Cookies</a>.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+      <button
+        id="accept-all"
+        class="bg-gfl-midea hover:bg-gfl-midea-hover px-6 py-3 rounded-xl font-bold text-sm transition-all order-1 sm:order-3"
+        style="color: white;"
+      >
+        Aceitar todos
+      </button>
+      <button
+        id="essentials-only"
+        class="border border-gfl-border hover:border-gfl-midea text-gfl-text px-6 py-3 rounded-xl font-bold text-sm transition-all order-2"
+      >
+        Apenas essenciais
+      </button>
+      <button
+        id="customize"
+        class="text-gfl-carrier underline hover:text-gfl-midea px-2 py-3 font-semibold text-sm transition-all order-3 sm:order-1"
+      >
+        Personalizar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de personalização -->
+<div
+  id="cookie-modal"
+  class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/50 p-4"
+>
+  <div class="bg-white rounded-2xl p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <h2 class="text-2xl font-bold text-gfl-text mb-2">Configurações de Cookies</h2>
+    <p class="text-sm text-gfl-text-muted leading-relaxed mb-6">
+      Gerencie suas preferências por categoria. Você pode alterar sua escolha a qualquer momento.
+    </p>
+
+    <div class="space-y-5">
+      <!-- Essenciais -->
+      <div class="flex items-start justify-between gap-4 pb-5 border-b border-gfl-border-soft">
+        <div class="flex-1">
+          <h3 class="text-base font-bold text-gfl-text mb-1">Cookies essenciais</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">
+            Necessários para o funcionamento básico do site (sessão, segurança, preferência de cookies).
+          </p>
+        </div>
+        <div class="flex flex-col items-center shrink-0 pt-1">
+          <input type="checkbox" id="toggle-essential" checked disabled class="w-5 h-5 accent-gfl-border cursor-not-allowed" />
+          <span class="text-[10px] text-gfl-text-muted font-semibold mt-1 uppercase tracking-wide">Sempre ativos</span>
+        </div>
+      </div>
+
+      <!-- Analíticos -->
+      <div class="flex items-start justify-between gap-4 pb-5 border-b border-gfl-border-soft">
+        <div class="flex-1">
+          <h3 class="text-base font-bold text-gfl-text mb-1">Cookies analíticos</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">
+            Google Analytics. Coletam dados anonimizados sobre uso do site para melhorias.
+          </p>
+        </div>
+        <input type="checkbox" id="toggle-analytics" class="w-5 h-5 accent-gfl-midea cursor-pointer shrink-0 mt-1" />
+      </div>
+
+      <!-- Publicitários -->
+      <div class="flex items-start justify-between gap-4 pb-5 border-b border-gfl-border-soft">
+        <div class="flex-1">
+          <h3 class="text-base font-bold text-gfl-text mb-1">Cookies publicitários</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">
+            Meta Pixel e Google Ads. Mensuram efetividade de campanhas e personalizam anúncios.
+          </p>
+        </div>
+        <input type="checkbox" id="toggle-advertising" class="w-5 h-5 accent-gfl-midea cursor-pointer shrink-0 mt-1" />
+      </div>
+
+      <!-- Funcionais -->
+      <div class="flex items-start justify-between gap-4">
+        <div class="flex-1">
+          <h3 class="text-base font-bold text-gfl-text mb-1">Cookies de funcionalidade</h3>
+          <p class="text-sm text-gfl-text-muted leading-relaxed">
+            Lembram preferências (idioma, exibição) para personalizar sua experiência.
+          </p>
+        </div>
+        <input type="checkbox" id="toggle-functional" class="w-5 h-5 accent-gfl-midea cursor-pointer shrink-0 mt-1" />
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-end gap-3 mt-8">
+      <button
+        id="cancel-modal"
+        class="border border-gfl-border hover:border-gfl-midea text-gfl-text px-6 py-3 rounded-xl font-bold text-sm transition-all"
+      >
+        Cancelar
+      </button>
+      <button
+        id="save-preferences"
+        class="bg-gfl-midea hover:bg-gfl-midea-hover px-6 py-3 rounded-xl font-bold text-sm transition-all"
+        style="color: white;"
+      >
+        Salvar preferências
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Chave do localStorage
+  const CONSENT_KEY = 'gfl-cookie-consent';
+  const CONSENT_VERSION = '1.0';
+
+  // Estrutura salva:
+  // {
+  //   version: '1.0',
+  //   timestamp: '2026-05-17T...',
+  //   categories: {
+  //     essential: true,    // sempre true
+  //     analytics: boolean,
+  //     advertising: boolean,
+  //     functional: boolean
+  //   }
+  // }
+
+  // Função: checa se já tem consentimento válido
+  function hasValidConsent() {
+    const saved = localStorage.getItem(CONSENT_KEY);
+    if (!saved) return false;
+    try {
+      const data = JSON.parse(saved);
+      return data.version === CONSENT_VERSION;
+    } catch {
+      return false;
+    }
+  }
+
+  // Função: salva consentimento
+  function saveConsent(categories) {
+    const data = {
+      version: CONSENT_VERSION,
+      timestamp: new Date().toISOString(),
+      categories: { essential: true, ...categories }
+    };
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(data));
+    // Esconde banner
+    document.getElementById('cookie-banner').style.display = 'none';
+    document.getElementById('cookie-modal').style.display = 'none';
+    // Dispara evento custom pra eventuais listeners (ex.: Analytics)
+    window.dispatchEvent(new CustomEvent('cookie-consent-updated', { detail: data }));
+  }
+
+  // Inicialização ao carregar a página
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!hasValidConsent()) {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    }
+  });
+
+  // Handlers dos botões
+  document.getElementById('accept-all').addEventListener('click', () => {
+    saveConsent({ analytics: true, advertising: true, functional: true });
+  });
+
+  document.getElementById('essentials-only').addEventListener('click', () => {
+    saveConsent({ analytics: false, advertising: false, functional: false });
+  });
+
+  document.getElementById('customize').addEventListener('click', () => {
+    document.getElementById('cookie-modal').style.display = 'flex';
+  });
+
+  document.getElementById('cancel-modal').addEventListener('click', () => {
+    document.getElementById('cookie-modal').style.display = 'none';
+  });
+
+  document.getElementById('save-preferences').addEventListener('click', () => {
+    const analytics = document.getElementById('toggle-analytics').checked;
+    const advertising = document.getElementById('toggle-advertising').checked;
+    const functional = document.getElementById('toggle-functional').checked;
+    saveConsent({ analytics, advertising, functional });
+  });
+
+  // Função global pra revisão (chamada do Footer)
+  window.openCookieSettings = function() {
+    // Carrega valores salvos se existirem
+    const saved = localStorage.getItem(CONSENT_KEY);
+    if (saved) {
+      try {
+        const data = JSON.parse(saved);
+        document.getElementById('toggle-analytics').checked = data.categories.analytics || false;
+        document.getElementById('toggle-advertising').checked = data.categories.advertising || false;
+        document.getElementById('toggle-functional').checked = data.categories.functional || false;
+      } catch {}
+    }
+    document.getElementById('cookie-modal').style.display = 'flex';
+  };
+</script>

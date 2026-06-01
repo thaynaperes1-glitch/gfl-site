@@ -4,6 +4,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import TopBar from '../components/layout/TopBar.astro';
 import WhatsAppFloat from '../components/layout/WhatsAppFloat.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import LocalBusinessSchema from '../components/seo/LocalBusinessSchema.astro';
 
 interface Props {
@@ -51,6 +52,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     </main>
     <Footer />
     <WhatsAppFloat />
+    <CookieBanner />
     <script>
       import '../scripts/scroll-reveal.js';
     </script>

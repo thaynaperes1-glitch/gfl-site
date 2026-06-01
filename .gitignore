@@ -25,3 +25,6 @@ pnpm-debug.log*
 # editor folders
 .vscode/
 .idea/
+
+# playwright mcp artifacts
+.playwright-mcp/
