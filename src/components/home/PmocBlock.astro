@@ -291,6 +291,9 @@ import { empresa } from '../../lib/empresa';
       const cidadeTexto = cidade ? `, em ${cidade}` : '';
       const msg = `Olá! Vim pelo site da GFL e quero uma proposta de PMOC. Minha empresa tem ${aparelhos}, é do setor ${setor}${cidadeTexto}.`;
       const url = `https://wa.me/${whatsRaw}?text=${encodeURIComponent(msg)}`;
+      // Conversão (só existe com a medição ligada). Nunca segura: é
+      // registrada e o WhatsApp abre na mesma hora, com ou sem ela.
+      try { if (window.gflConversao) window.gflConversao('whatsapp', 'home-pmoc'); } catch (e) {}
       window.open(url, '_blank');
     });
   }

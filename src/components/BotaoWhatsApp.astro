@@ -1,0 +1,23 @@
+---
+// Botão de WhatsApp — o ÚNICO jeito de pôr um link wa.me numa página.
+//
+// Recebe o texto da mensagem e a ORIGEM do clique ("home-topo", "servicos"...),
+// que vai junto do evento de conversão para saber de onde veio a conversa.
+// Todo o resto (class, target, rel, data-*) passa direto para o <a>, então o
+// botão fica visualmente idêntico ao que era antes.
+//
+// O número mora em src/config/contato.ts. A medição (quando ligada em
+// src/config/medicao.ts) lê `data-conversao` e `data-origem` no clique; com a
+// medição desligada, isto é só um link, sem script nenhum.
+import { whatsappLink } from '../lib/empresa';
+
+interface Props {
+  mensagem: string;
+  origem: string;
+  [atributo: string]: unknown;
+}
+
+const { mensagem, origem, ...atributos } = Astro.props;
+---
+
+<a href={whatsappLink(mensagem)} data-conversao="whatsapp" data-origem={origem} {...atributos}><slot /></a>

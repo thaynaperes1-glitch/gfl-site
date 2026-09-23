@@ -1,6 +1,7 @@
 ---
+import BotaoWhatsApp from '../components/BotaoWhatsApp.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { empresa, whatsappLink } from '../lib/empresa';
+import { empresa } from '../lib/empresa';
 
 const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
 ---
@@ -30,9 +31,9 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
           Plano de Manutenção, Operação e Controle conforme legislação federal. Executado por Centro de Serviços Autorizado Midea + Carrier com Responsável Técnico registrado.
         </p>
         <div class="flex flex-wrap gap-3">
-          <a href={whatsappLink('Olá, vim do site GFL e quero cotar PMOC para minha empresa.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+          <BotaoWhatsApp mensagem={'Olá, vim do site GFL e quero cotar PMOC para minha empresa.'} origem="pmoc" target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
             Solicitar diagnóstico gratuito
-          </a>
+          </BotaoWhatsApp>
           <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
             Falar com técnico
           </a>
@@ -289,10 +290,10 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
           <p class="text-sm text-gfl-text-muted mb-4">
             Diagnóstico inicial é <strong class="text-gfl-text">gratuito</strong>. Você recebe orçamento personalizado em até 24h úteis após a visita técnica.
           </p>
-          <a href={whatsappLink('Olá, vim do site GFL e quero solicitar um diagnóstico gratuito de PMOC para minha empresa.')} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-gfl-midea hover:bg-gfl-midea-hover text-white px-6 py-3.5 rounded-xl font-bold text-base transition-all hover:shadow-xl hover:shadow-gfl-midea/30">
+          <BotaoWhatsApp mensagem={'Olá, vim do site GFL e quero solicitar um diagnóstico gratuito de PMOC para minha empresa.'} origem="pmoc" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-gfl-midea hover:bg-gfl-midea-hover text-white px-6 py-3.5 rounded-xl font-bold text-base transition-all hover:shadow-xl hover:shadow-gfl-midea/30">
             Solicitar diagnóstico gratuito
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-          </a>
+          </BotaoWhatsApp>
         </div>
       </div>
     </div>
@@ -311,9 +312,9 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
         Diagnóstico técnico em até 24h. Atendemos {totalCidades}+ cidades no Vale do Paraíba e Região de Campinas.
       </p>
       <div class="flex flex-wrap justify-center gap-3">
-        <a href={whatsappLink('Olá, vim do site GFL e quero contratar PMOC para minha empresa.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+        <BotaoWhatsApp mensagem={'Olá, vim do site GFL e quero contratar PMOC para minha empresa.'} origem="pmoc" target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
           Contratar PMOC agora
-        </a>
+        </BotaoWhatsApp>
         <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
           Outras formas de contato
         </a>

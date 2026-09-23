@@ -1,6 +1,7 @@
 ---
+import BotaoWhatsApp from '../components/BotaoWhatsApp.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { empresa, whatsappLink } from '../lib/empresa';
+import { empresa } from '../lib/empresa';
 ---
 
 <BaseLayout
@@ -44,8 +45,8 @@ import { empresa, whatsappLink } from '../lib/empresa';
   <section data-reveal class="py-16 md:py-20 bg-gfl-bg">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-        <a
-          href={whatsappLink('Olá, vim do site da GFL e gostaria de falar com um técnico.')}
+        <BotaoWhatsApp
+          mensagem={'Olá, vim do site da GFL e gostaria de falar com um técnico.'} origem="contato"
           target="_blank"
           rel="noopener"
           data-reveal
@@ -96,10 +97,12 @@ import { empresa, whatsappLink } from '../lib/empresa';
               </svg>
             </div>
           </div>
-        </a>
+        </BotaoWhatsApp>
 
         <a
           href={`tel:${empresa.contato.telefoneRaw}`}
+          data-conversao="telefone"
+          data-origem="contato"
           data-reveal
           data-delay="200"
           class="group relative bg-white rounded-2xl p-8 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500 overflow-hidden"
@@ -500,6 +503,10 @@ import { empresa, whatsappLink } from '../lib/empresa';
       ].join('\n');
 
       const url = `https://wa.me/${whatsappBase}?text=${encodeURIComponent(texto)}`;
+      // ⚠️ Só a ORIGEM vai no evento: nada do que o cliente digitou.
+      // Conversão (só existe com a medição ligada). Nunca segura: é
+      // registrada e o WhatsApp abre na mesma hora, com ou sem ela.
+      try { if (window.gflConversao) window.gflConversao('whatsapp', 'contato-formulario'); } catch (e) {}
       window.open(url, '_blank', 'noopener');
     });
   </script>

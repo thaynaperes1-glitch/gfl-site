@@ -1,5 +1,5 @@
 ---
-import { whatsappLink } from '../../lib/empresa';
+import BotaoWhatsApp from '../BotaoWhatsApp.astro';
 
 const slides = [
   {
@@ -11,7 +11,7 @@ const slides = [
       'Diagnóstico técnico Midea autorizado em até 24h. Peças originais, garantia de fábrica preservada.',
     cta1: {
       label: 'Agendar visita',
-      href: whatsappLink('Olá, meu split não está gelando. Posso agendar uma visita?')
+      whatsapp: 'Olá, meu split não está gelando. Posso agendar uma visita?'
     },
     cta2: { label: 'Saber mais', href: '/servicos' }
   },
@@ -24,7 +24,7 @@ const slides = [
       'Centro de Serviços Autorizado: técnico capacitado pela própria Midea, com peças originais.',
     cta1: {
       label: 'Solicitar atendimento',
-      href: whatsappLink('Olá, minha lava e seca está com erro. Pode me ajudar?')
+      whatsapp: 'Olá, minha lava e seca está com erro. Pode me ajudar?'
     },
     cta2: { label: 'Ver serviços', href: '/servicos' }
   },
@@ -48,7 +48,7 @@ const slides = [
     cta1: { label: 'Ver todos os serviços', href: '/servicos' },
     cta2: {
       label: 'Falar com técnico',
-      href: whatsappLink('Olá, gostaria de saber mais sobre os serviços.')
+      whatsapp: 'Olá, gostaria de saber mais sobre os serviços.'
     }
   }
 ];
@@ -95,20 +95,45 @@ const slides = [
                     {s.subtitle}
                   </p>
                   <div class="flex flex-wrap gap-3">
-                    <a
-                      href={s.cta1.href}
-                      target={s.cta1.href.startsWith('http') ? '_blank' : '_self'}
-                      rel={s.cta1.href.startsWith('http') ? 'noopener' : undefined}
-                      class="bg-gfl-midea hover:bg-gfl-midea-hover text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
-                    >
-                      {s.cta1.label}
-                    </a>
-                    <a
-                      href={s.cta2.href}
-                      class="bg-white text-gfl-carrier border border-gfl-carrier hover:bg-gfl-carrier hover:text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
-                    >
-                      {s.cta2.label}
-                    </a>
+                    {/* CTA de WhatsApp sai pelo BotaoWhatsApp (medição e
+                        número num lugar só); link interno continua <a>. O
+                        target de cada um é o de antes: o 1º abre o WhatsApp em
+                        aba nova, o 2º na mesma aba. */}
+                    {s.cta1.whatsapp ? (
+                      <BotaoWhatsApp
+                        mensagem={s.cta1.whatsapp}
+                        origem="home-carrossel"
+                        target="_blank"
+                        rel="noopener"
+                        class="bg-gfl-midea hover:bg-gfl-midea-hover text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                      >
+                        {s.cta1.label}
+                      </BotaoWhatsApp>
+                    ) : (
+                      <a
+                        href={s.cta1.href}
+                        target="_self"
+                        class="bg-gfl-midea hover:bg-gfl-midea-hover text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                      >
+                        {s.cta1.label}
+                      </a>
+                    )}
+                    {s.cta2.whatsapp ? (
+                      <BotaoWhatsApp
+                        mensagem={s.cta2.whatsapp}
+                        origem="home-carrossel"
+                        class="bg-white text-gfl-carrier border border-gfl-carrier hover:bg-gfl-carrier hover:text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                      >
+                        {s.cta2.label}
+                      </BotaoWhatsApp>
+                    ) : (
+                      <a
+                        href={s.cta2.href}
+                        class="bg-white text-gfl-carrier border border-gfl-carrier hover:bg-gfl-carrier hover:text-white px-5 py-2.5 rounded font-semibold text-sm transition-colors"
+                      >
+                        {s.cta2.label}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

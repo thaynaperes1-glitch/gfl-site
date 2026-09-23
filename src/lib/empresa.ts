@@ -1,3 +1,8 @@
+import { WHATSAPP_NUMERO } from '../config/contato';
+
+// "+55 12 98179-6079", derivado do número único em src/config/contato.ts.
+const whatsappFormatado = `+${WHATSAPP_NUMERO.slice(0, 2)} ${WHATSAPP_NUMERO.slice(2, 4)} ${WHATSAPP_NUMERO.slice(4, 9)}-${WHATSAPP_NUMERO.slice(9)}`;
+
 export const empresa = {
   nome: 'GFL Service & Repair',
   razaoSocial: 'GFL Service & Repair Ltda',
@@ -14,8 +19,8 @@ export const empresa = {
   contato: {
     telefone: '(12) 3933-4110',
     telefoneRaw: '+551239334110',
-    whatsapp: '+55 12 98179-6079',
-    whatsappRaw: '5512981796079',
+    whatsapp: whatsappFormatado,
+    whatsappRaw: WHATSAPP_NUMERO,
     email: 'sac@gflrefrigeracao.com.br'
   },
   horario: {

@@ -6,6 +6,7 @@ import TopBar from '../components/layout/TopBar.astro';
 import WhatsAppFloat from '../components/layout/WhatsAppFloat.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import LocalBusinessSchema from '../components/seo/LocalBusinessSchema.astro';
+import Medicao from '../components/Medicao.astro';
 
 interface Props {
   title: string;
@@ -43,6 +44,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     />
 
     <LocalBusinessSchema />
+    {/* Medição de conversão do Google Ads. Desligada em src/config/medicao.ts,
+        não escreve nada no HTML. */}
+    <Medicao />
   </head>
   <body>
     <TopBar />

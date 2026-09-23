@@ -1,6 +1,7 @@
 ---
+import BotaoWhatsApp from '../components/BotaoWhatsApp.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { empresa, whatsappLink } from '../lib/empresa';
+import { empresa } from '../lib/empresa';
 
 const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
 ---
@@ -68,10 +69,10 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
               <span>Garantia do serviço de 90 dias</span>
             </li>
           </ul>
-          <a href={whatsappLink('Olá, meu equipamento parou de funcionar. Quero solicitar diagnóstico técnico.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+          <BotaoWhatsApp mensagem={'Olá, meu equipamento parou de funcionar. Quero solicitar diagnóstico técnico.'} origem="servicos" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
             Solicitar diagnóstico
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-          </a>
+          </BotaoWhatsApp>
         </div>
 
         <div data-reveal data-delay="200" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
@@ -107,10 +108,10 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
               <span>Relatório técnico após cada visita</span>
             </li>
           </ul>
-          <a href={whatsappLink('Olá, quero contratar plano de manutenção preventiva.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+          <BotaoWhatsApp mensagem={'Olá, quero contratar plano de manutenção preventiva.'} origem="servicos" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
             Contratar plano
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-          </a>
+          </BotaoWhatsApp>
         </div>
 
         <div data-reveal data-delay="300" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
@@ -145,10 +146,10 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
               <span>Plano de substituições antecipadas</span>
             </li>
           </ul>
-          <a href={whatsappLink('Olá, quero saber sobre manutenção preditiva para minha empresa.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+          <BotaoWhatsApp mensagem={'Olá, quero saber sobre manutenção preditiva para minha empresa.'} origem="servicos" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
             Saber mais
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-          </a>
+          </BotaoWhatsApp>
         </div>
 
         <div data-reveal data-delay="400" class="group relative bg-gradient-to-br from-gfl-midea/5 to-gfl-carrier/5 rounded-2xl p-7 md:p-9 border-2 border-gfl-midea hover:shadow-2xl transition-all duration-500">
@@ -226,10 +227,10 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
               <span>Teste de funcionamento e laudo</span>
             </li>
           </ul>
-          <a href={whatsappLink('Olá, quero solicitar instalação de ar-condicionado.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+          <BotaoWhatsApp mensagem={'Olá, quero solicitar instalação de ar-condicionado.'} origem="servicos" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
             Solicitar instalação
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-          </a>
+          </BotaoWhatsApp>
         </div>
 
         <div data-reveal data-delay="600" class="group relative bg-white rounded-2xl p-7 md:p-9 border border-gfl-border-soft hover:border-gfl-midea hover:shadow-2xl transition-all duration-500">
@@ -264,10 +265,10 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
               <span>Recomendado a cada 6-12 meses</span>
             </li>
           </ul>
-          <a href={whatsappLink('Olá, quero agendar higienização do meu ar-condicionado.')} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
+          <BotaoWhatsApp mensagem={'Olá, quero agendar higienização do meu ar-condicionado.'} origem="servicos" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-bold text-gfl-midea hover:gap-2.5 transition-all">
             Agendar higienização
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-          </a>
+          </BotaoWhatsApp>
         </div>
       </div>
     </div>
@@ -286,9 +287,9 @@ const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 
         Fale com nossa equipe técnica e receba orientação personalizada. Atendemos {totalCidades}+ cidades no Vale do Paraíba e Região de Campinas.
       </p>
       <div class="flex flex-wrap justify-center gap-3">
-        <a href={whatsappLink('Olá, vim do site GFL e quero orientação sobre qual serviço contratar.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+        <BotaoWhatsApp mensagem={'Olá, vim do site GFL e quero orientação sobre qual serviço contratar.'} origem="servicos" target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
           Falar com técnico no WhatsApp
-        </a>
+        </BotaoWhatsApp>
         <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
           Outras formas de contato
         </a>

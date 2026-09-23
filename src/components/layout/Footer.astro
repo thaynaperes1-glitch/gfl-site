@@ -31,7 +31,7 @@ import { empresa } from '../../lib/empresa';
         <h4 class="text-sm font-bold text-gfl-text mb-3">Atendimento</h4>
         <ul class="space-y-2 text-xs text-gfl-text-muted">
           <li>
-            <a href={`tel:${empresa.contato.telefoneRaw}`} class="hover:text-gfl-midea">
+            <a href={`tel:${empresa.contato.telefoneRaw}`} data-conversao="telefone" data-origem="rodape" class="hover:text-gfl-midea">
               {empresa.contato.telefone}
             </a>
           </li>

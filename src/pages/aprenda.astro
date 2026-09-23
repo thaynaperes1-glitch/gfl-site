@@ -1,6 +1,7 @@
 ---
+import BotaoWhatsApp from '../components/BotaoWhatsApp.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { empresa, whatsappLink } from '../lib/empresa';
+import { empresa } from '../lib/empresa';
 
 const totalCidades = empresa.regioes.reduce((acc, r) => acc + r.cidades.length, 0);
 
@@ -139,10 +140,10 @@ const topicos = {
               </div>
               <h3 class="text-xl md:text-2xl font-bold text-gfl-text tracking-tight leading-tight mb-4">{topico.titulo}</h3>
               <p class="text-sm text-gfl-text-muted leading-relaxed mb-5">{topico.conteudo}</p>
-              <a href={whatsappLink(topico.ctaMsg)} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-midea hover:gap-2.5 transition-all">
+              <BotaoWhatsApp mensagem={topico.ctaMsg} origem="aprenda" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-midea hover:gap-2.5 transition-all">
                 {topico.cta}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+              </BotaoWhatsApp>
             </article>
           ))}
         </div>
@@ -179,10 +180,10 @@ const topicos = {
               </div>
               <h3 class="text-xl md:text-2xl font-bold text-gfl-text tracking-tight leading-tight mb-4">{topico.titulo}</h3>
               <p class="text-sm text-gfl-text-muted leading-relaxed mb-5">{topico.conteudo}</p>
-              <a href={whatsappLink(topico.ctaMsg)} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-midea hover:gap-2.5 transition-all">
+              <BotaoWhatsApp mensagem={topico.ctaMsg} origem="aprenda" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-gfl-midea hover:gap-2.5 transition-all">
                 {topico.cta}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+              </BotaoWhatsApp>
             </article>
           ))}
         </div>
@@ -203,9 +204,9 @@ const topicos = {
         Nossa equipe técnica responde dúvidas específicas pelo WhatsApp. Atendendo {totalCidades}+ cidades no Vale do Paraíba e Região de Campinas.
       </p>
       <div class="flex flex-wrap justify-center gap-3">
-        <a href={whatsappLink('Olá, vim do site GFL pela página Aprenda. Tenho uma dúvida técnica.')} target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
+        <BotaoWhatsApp mensagem={'Olá, vim do site GFL pela página Aprenda. Tenho uma dúvida técnica.'} origem="aprenda" target="_blank" rel="noopener" class="bg-gfl-midea hover:bg-gfl-midea-hover px-8 py-4 rounded-xl font-bold text-base transition-all hover:shadow-2xl hover:shadow-gfl-midea/40" style="color: white;">
           Tirar dúvida no WhatsApp
-        </a>
+        </BotaoWhatsApp>
         <a href="/contato" class="bg-white/10 backdrop-blur border border-white/30 hover:bg-white hover:text-gfl-carrier px-8 py-4 rounded-xl font-bold text-base transition-all" style="color: white;">
           Outras formas de contato
         </a>

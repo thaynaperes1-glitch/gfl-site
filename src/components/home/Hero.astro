@@ -1,5 +1,5 @@
 ---
-import { whatsappLink } from '../../lib/empresa';
+import BotaoWhatsApp from '../BotaoWhatsApp.astro';
 ---
 
 <section class="bg-gfl-bg-soft relative overflow-hidden">
@@ -35,14 +35,14 @@ import { whatsappLink } from '../../lib/empresa';
           >
             Solicite diagnóstico PMOC
           </a>
-          <a
-            href={whatsappLink('Olá, vim do site e quero falar com um técnico.')}
+          <BotaoWhatsApp
+            mensagem={'Olá, vim do site e quero falar com um técnico.'} origem="home-topo"
             target="_blank"
             rel="noopener"
             class="bg-white text-gfl-carrier border border-gfl-carrier hover:bg-gfl-carrier hover:text-white px-7 py-3.5 rounded font-semibold text-sm md:text-base transition-colors"
           >
             Falar pelo WhatsApp
-          </a>
+          </BotaoWhatsApp>
         </div>
 
         <div class="flex items-center gap-3 pt-5 border-t border-gfl-border-soft">

@@ -1,5 +1,5 @@
 ---
-import { whatsappLink } from '../../lib/empresa';
+import BotaoWhatsApp from '../BotaoWhatsApp.astro';
 ---
 
 <section class="bg-gfl-bg py-12" data-reveal>
@@ -17,14 +17,14 @@ import { whatsappLink } from '../../lib/empresa';
       >
         Solicitar orçamento
       </a>
-      <a
-        href={whatsappLink('Olá, gostaria de falar com a equipe técnica.')}
+      <BotaoWhatsApp
+        mensagem={'Olá, gostaria de falar com a equipe técnica.'} origem="home-rodape"
         target="_blank"
         rel="noopener"
         class="bg-white text-gfl-carrier border border-gfl-carrier hover:bg-gfl-carrier hover:text-white px-6 py-3 rounded font-semibold text-sm transition-colors"
       >
         WhatsApp direto
-      </a>
+      </BotaoWhatsApp>
     </div>
   </div>
 </section>

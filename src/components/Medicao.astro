@@ -1,0 +1,143 @@
+---
+// MEDIÇÃO DE CONVERSÃO — Google Ads (gtag.js), e só ele.
+//
+// Incluído UMA vez no BaseLayout. Tudo depende de src/config/medicao.ts:
+//
+//   MEDICAO_ATIVA = false  →  este componente não escreve NADA no HTML. Sem
+//                             script, sem tag, sem evento. O site fica
+//                             exatamente como era.
+//   MEDICAO_ATIVA = true   →  um script pequeno que:
+//      1. só carrega o gtag.js DEPOIS do aceite de "Cookies publicitários" no
+//         banner do site (CookieBanner.astro: localStorage 'gfl-cookie-consent'
+//         e o evento 'cookie-consent-updated'). Sem aceite, nada do Google
+//         carrega e nenhum evento sai;
+//      2. carrega o gtag.js ASSÍNCRONO, injetado por script: não trava a
+//         renderização da página;
+//      3. ouve o clique em qualquer <a data-conversao> (botões de WhatsApp e
+//         links de telefone) e expõe window.gflConversao para os dois pontos
+//         que abrem o WhatsApp por script (bloco PMOC e formulário de contato).
+//
+// ⚠️ O BOTÃO É A RECEITA DA EMPRESA: ele funciona com a medição quebrada.
+// O clique SÓ é segurado quando ele vai TIRAR a pessoa da página (link na mesma
+// aba) E o gtag.js está de fato carregado. Nesse caso a navegação acontece no
+// que vier primeiro: o callback do próprio gtag ou o prazo de segurança
+// (PRAZO_MS). Em todos os outros casos (aba nova, telefone, gtag bloqueado,
+// sem consentimento, erro) o clique segue na hora e o evento, se der, vai por
+// sendBeacon, que sobrevive à troca de página.
+//
+// ⚠️ PRIVACIDADE: o evento leva só a ORIGEM do clique e o caminho da página.
+// Nada de nome, telefone, e-mail ou texto digitado.
+import {
+  CONVERSAO_TELEFONE,
+  CONVERSAO_WHATSAPP,
+  GOOGLE_ADS_ID,
+  MEDICAO_ATIVA,
+} from '../config/medicao';
+
+// 350 ms: o evento vai por sendBeacon, e com o gtag carregado o callback
+// costuma voltar bem antes disso. Acima de ~400 ms a espera começa a ser
+// percebida (e a pessoa clica de novo); abaixo de ~250 ms o prazo vence antes
+// do callback em rede móvel lenta, e o sendBeacon cobre o resto de qualquer
+// jeito. É o teto do atraso, não o atraso normal.
+const PRAZO_MS = 350;
+---
+
+{MEDICAO_ATIVA && (
+  <script
+    is:inline
+    define:vars={{
+      adsId: GOOGLE_ADS_ID,
+      envioWhatsapp: CONVERSAO_WHATSAPP,
+      envioTelefone: CONVERSAO_TELEFONE,
+      prazoMs: PRAZO_MS,
+    }}
+  >
+    (function () {
+      var CONSENT_KEY = 'gfl-cookie-consent';
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+      var estado = { consentido: false, carregada: false, injetada: false };
+
+      function publicidadeAceita() {
+        try {
+          var salvo = JSON.parse(localStorage.getItem(CONSENT_KEY) || 'null');
+          return !!(salvo && salvo.categories && salvo.categories.advertising === true);
+        } catch (e) { return false; }
+      }
+
+      function carregar() {
+        estado.consentido = true;
+        if (estado.injetada) return;
+        estado.injetada = true;
+        window.gtag('js', new Date());
+        window.gtag('config', adsId);
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(adsId);
+        s.onload = function () { estado.carregada = true; };
+        document.head.appendChild(s);
+      }
+
+      if (publicidadeAceita()) carregar();
+      window.addEventListener('cookie-consent-updated', function (ev) {
+        var c = ev && ev.detail && ev.detail.categories;
+        if (c && c.advertising === true) carregar();
+      });
+
+      // Monta e envia o evento. Nunca lança: qualquer falha vira "seguir".
+      function disparar(tipo, origem, aoTerminar) {
+        if (!estado.consentido) return false;
+        var envio = tipo === 'telefone' ? envioTelefone : envioWhatsapp;
+        var dados = {
+          send_to: envio,
+          origem: origem || 'sem-origem',
+          pagina: location.pathname,
+          transport_type: 'beacon',
+        };
+        try { console.info('[medicao] conversão', tipo, dados); } catch (e) {}
+        if (aoTerminar) {
+          dados.event_callback = aoTerminar;
+          dados.event_timeout = prazoMs;
+        }
+        try {
+          window.gtag('event', 'conversion', dados);
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      // Para quem abre o WhatsApp por script (sempre em aba nova).
+      window.gflConversao = function (tipo, origem) { disparar(tipo, origem, null); };
+
+      document.addEventListener('click', function (ev) {
+        var alvo = ev.target && ev.target.closest ? ev.target.closest('a[data-conversao]') : null;
+        if (!alvo) return;
+        var tipo = alvo.getAttribute('data-conversao');
+        var origem = alvo.getAttribute('data-origem');
+
+        // O clique tira a pessoa da página? Só quando é link http(s) na MESMA
+        // aba, clique simples. Aba nova e tel: não descarregam a página.
+        var mesmaAba = !alvo.target || alvo.target === '_self';
+        var saiDaPagina =
+          mesmaAba && /^https?:/i.test(alvo.href) && ev.button === 0 &&
+          !ev.metaKey && !ev.ctrlKey && !ev.shiftKey && !ev.altKey && !ev.defaultPrevented;
+
+        if (!saiDaPagina || !estado.carregada) {
+          disparar(tipo, origem, null);
+          return; // o navegador segue sozinho, sem espera nenhuma
+        }
+
+        // Segura o clique só até o callback do gtag ou o prazo, o que vier antes.
+        ev.preventDefault();
+        var foi = false;
+        var destino = alvo.href;
+        function ir() { if (foi) return; foi = true; location.href = destino; }
+        var enviado = disparar(tipo, origem, ir);
+        if (!enviado) { ir(); return; }
+        setTimeout(ir, prazoMs); // rede de segurança: nunca mais que o prazo
+      });
+    })();
+  </script>
+)}
